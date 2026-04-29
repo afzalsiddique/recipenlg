@@ -94,6 +94,10 @@ def main() -> int:
     model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path).to(device)
     model.eval()
 
+    model_max_positions = int(getattr(model.config, "n_positions",
+                                      getattr(model.config, "max_position_embeddings", 1024)))
+    log.info("Model max positions: %d", model_max_positions)
+
     end_token_id = tokenizer.convert_tokens_to_ids("<RECIPE_END>")
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = "<RECIPE_END>"
@@ -111,14 +115,27 @@ def main() -> int:
     )
     log.info("Decoding kwargs: %s", gen_kwargs)
 
+    def call_kwargs(prompt_len: int) -> dict:
+        budget = model_max_positions - prompt_len
+        if budget <= 0:
+            return None
+        kw = dict(gen_kwargs)
+        if budget < kw["max_new_tokens"]:
+            kw["max_new_tokens"] = budget
+        return kw
+
     if args.interactive:
         while True:
             raw = input("Comma-separated ingredients, semicolon to close >>> ")
             ner = [t.strip() for t in raw.replace(";", "").split(",") if t.strip()]
             prompt = build_prompt(ner)
             ids = tokenizer.encode(prompt, return_tensors="pt").to(device)
+            kw = call_kwargs(ids.shape[1])
+            if kw is None:
+                print(f"Prompt has {ids.shape[1]} tokens, exceeds model max {model_max_positions}; skipping.")
+                continue
             with torch.no_grad():
-                out = model.generate(ids, **gen_kwargs)
+                out = model.generate(ids, **kw)
             for i in range(out.shape[0]):
                 text = decode_full_text(tokenizer, out[i, ids.shape[1]:], end_token_id)
                 print("=" * 60)
@@ -138,8 +155,17 @@ def main() -> int:
     for k, row in enumerate(gold):
         prompt = build_prompt(row["ner"])
         ids = tokenizer.encode(prompt, return_tensors="pt").to(device)
+        prompt_len = ids.shape[1]
+        kw = call_kwargs(prompt_len)
+        if kw is None:
+            log.warning("Skipping prompt %d: %d tokens >= model max %d",
+                        k, prompt_len, model_max_positions)
+            continue
+        if kw["max_new_tokens"] != gen_kwargs["max_new_tokens"]:
+            log.info("Prompt %d: clamping max_new_tokens %d -> %d (prompt_len=%d)",
+                     k, gen_kwargs["max_new_tokens"], kw["max_new_tokens"], prompt_len)
         with torch.no_grad():
-            out = model.generate(ids, **gen_kwargs)
+            out = model.generate(ids, **kw)
         for i in range(out.shape[0]):
             full_ids = out[i].tolist()
             if end_token_id in full_ids:
