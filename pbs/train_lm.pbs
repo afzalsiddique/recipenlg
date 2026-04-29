@@ -1,0 +1,45 @@
+#!/bin/bash
+#PBS -N recipenlg-train-lm
+#PBS -q gpus
+#PBS -l select=1:ncpus=8:mem=128gb:ngpus=1:glist=a100
+#PBS -l walltime=168:00:00
+#PBS -W group_list=x-ccast-prj-chayan
+#PBS -m abe
+#PBS -M m.afzalsiddique@ndus.edu
+#PBS -j oe
+#PBS -o logs/
+
+cd "$PBS_O_WORKDIR"
+source pbs/env.sh
+
+nvidia-smi || true
+
+python -m generation.run_lm_finetuning_new \
+    --h5_path generation/data/unsupervised.h5 \
+    --output_dir generation/model_out \
+    --model_name_or_path gpt2 \
+    --block_size 1024 \
+    --eval_split_offset 8100 \
+    --per_device_train_batch_size 4 \
+    --per_device_eval_batch_size 4 \
+    --gradient_accumulation_steps 8 \
+    --num_train_epochs 2.0 \
+    --learning_rate 5e-5 \
+    --weight_decay 0.0 \
+    --warmup_steps 1000 \
+    --lr_scheduler_type linear \
+    --adam_beta1 0.9 \
+    --adam_beta2 0.999 \
+    --adam_epsilon 1e-8 \
+    --max_grad_norm 1.0 \
+    --logging_steps 100 \
+    --save_steps 5000 \
+    --save_total_limit 2 \
+    --eval_strategy steps \
+    --eval_steps 5000 \
+    --report_to none \
+    --dataloader_num_workers 4 \
+    --seed 42 \
+    --do_train \
+    --do_eval \
+    --overwrite_output_dir

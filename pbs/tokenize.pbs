@@ -1,0 +1,21 @@
+#!/bin/bash
+#PBS -N recipenlg-tokenize
+#PBS -q preemptible
+#PBS -l select=1:ncpus=4:mem=32gb
+#PBS -l walltime=12:00:00
+#PBS -W group_list=x-ccast-prj-chayan
+#PBS -m abe
+#PBS -M m.afzalsiddique@ndus.edu
+#PBS -j oe
+#PBS -o logs/
+
+cd "$PBS_O_WORKDIR"
+source pbs/env.sh
+
+python -m generation.tokenization \
+    --data_dir generation/data \
+    --train_filename unsupervised_train.txt \
+    --test_filename unsupervised_test.txt \
+    --output_h5 unsupervised.h5 \
+    --block_size 1024 \
+    --base_tokenizer gpt2

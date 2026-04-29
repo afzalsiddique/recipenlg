@@ -1,0 +1,18 @@
+#!/bin/bash
+#PBS -N recipenlg-eval-ner
+#PBS -q default
+#PBS -l select=1:ncpus=2:mem=4gb
+#PBS -l walltime=00:30:00
+#PBS -W group_list=x-ccast-prj-chayan
+#PBS -m abe
+#PBS -M m.afzalsiddique@ndus.edu
+#PBS -j oe
+#PBS -o logs/
+
+cd "$PBS_O_WORKDIR"
+source pbs/env.sh
+
+python -m ner.eval_ner \
+    --model_dir ner/model_v3 \
+    --label food \
+    --results_path ner/ner_results.json

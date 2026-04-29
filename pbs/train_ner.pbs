@@ -1,0 +1,22 @@
+#!/bin/bash
+#PBS -N recipenlg-train-ner
+#PBS -q preemptible
+#PBS -l select=1:ncpus=4:mem=8gb
+#PBS -l walltime=04:00:00
+#PBS -W group_list=x-ccast-prj-chayan
+#PBS -m abe
+#PBS -M m.afzalsiddique@ndus.edu
+
+cd "$PBS_O_WORKDIR"
+source pbs/env.sh
+
+python -m ner.train_ner \
+    --output_dir ner/model_v3 \
+    --label food \
+    --n_iter 30 \
+    --dropout 0.2 \
+    --batch_min 4.0 \
+    --batch_max 32.0 \
+    --batch_compound 1.001 \
+    --seed 42 \
+    --blank_lang en

@@ -1,0 +1,24 @@
+#!/bin/bash
+#PBS -N recipenlg-generate
+#PBS -q preemptible
+#PBS -l select=1:ncpus=4:mem=32gb:ngpus=1:glist=l40s
+#PBS -l walltime=06:00:00
+#PBS -W group_list=x-ccast-prj-chayan
+#PBS -m abe
+#PBS -M m.afzalsiddique@ndus.edu
+
+cd "$PBS_O_WORKDIR"
+source pbs/env.sh
+
+nvidia-smi || true
+
+python -m generation.run_generation \
+    --model_name_or_path generation/model_out \
+    --input_jsonl generation/data/gold_test_100.json \
+    --output_json generation/data/generated_recipenlg.json \
+    --top_p 0.9 \
+    --top_k 0 \
+    --temperature 1.0 \
+    --num_return_sequences 10 \
+    --max_new_tokens 950 \
+    --seed 42

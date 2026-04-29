@@ -1,0 +1,79 @@
+#!/bin/bash
+#PBS -N recipenlg-setup-venv
+#PBS -q preemptible
+#PBS -l select=1:ncpus=4:mem=16gb
+#PBS -l walltime=02:00:00
+#PBS -W group_list=x-ccast-prj-chayan
+#PBS -m abe
+#PBS -M m.afzalsiddique@ndus.edu
+
+# Bootstrap a project-local venv and install the project requirements.
+# Idempotent: safe to re-run; will reuse the existing venv if present and
+# only re-install requirements.
+
+set -euo pipefail
+
+PROJECT_ROOT="/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg"
+VENV_PATH="$PROJECT_ROOT/.venv"
+PYTHON_BIN="${PYTHON_BIN:-python3}"
+PIP_INDEX_URL="${PIP_INDEX_URL:-https://pypi.org/simple}"
+TORCH_INDEX_URL="${TORCH_INDEX_URL:-https://download.pytorch.org/whl/cu121}"
+SPACY_MODEL="${SPACY_MODEL:-en_core_web_sm}"
+
+cd "$PROJECT_ROOT"
+mkdir -p "$PROJECT_ROOT/logs"
+
+echo "Project dir: $PROJECT_ROOT"
+echo "Venv path:   $VENV_PATH"
+echo "Python:      $($PYTHON_BIN --version 2>&1)"
+
+if [ ! -d "$VENV_PATH" ]; then
+    echo "=== Creating venv at $VENV_PATH ==="
+    "$PYTHON_BIN" -m venv "$VENV_PATH"
+else
+    echo "=== Reusing existing venv at $VENV_PATH ==="
+fi
+
+# shellcheck disable=SC1091
+source "$VENV_PATH/bin/activate"
+
+which python
+python --version
+python -m pip --version
+
+echo "=== Upgrading pip / setuptools / wheel ==="
+python -m pip install --upgrade pip setuptools wheel \
+    --index-url "$PIP_INDEX_URL"
+
+echo "=== Installing PyTorch (CUDA build) ==="
+python -m pip install torch \
+    --index-url "$TORCH_INDEX_URL"
+
+echo "=== Installing project requirements ==="
+python -m pip install -r requirements.txt \
+    --index-url "$PIP_INDEX_URL"
+
+echo "=== Downloading spaCy base model ($SPACY_MODEL) ==="
+python -m spacy download "$SPACY_MODEL" || true
+
+echo "=== Smoke imports ==="
+python - <<'PY'
+import importlib, sys
+mods = [
+    "torch", "transformers", "accelerate", "datasets", "h5py",
+    "numpy", "pandas", "scipy", "sklearn", "nltk", "jiwer",
+    "textstat", "tqdm", "spacy", "language_tool_python",
+]
+failed = []
+for m in mods:
+    try:
+        importlib.import_module(m)
+        print(f"  OK  {m}")
+    except Exception as e:
+        print(f"  FAIL {m}: {e}")
+        failed.append(m)
+print("CUDA available:", __import__("torch").cuda.is_available())
+sys.exit(1 if failed else 0)
+PY
+
+echo "=== Done. Activate with: source $VENV_PATH/bin/activate ==="

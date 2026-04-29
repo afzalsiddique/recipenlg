@@ -1,0 +1,93 @@
+#!/bin/bash
+#PBS -N recipenlg-smoke
+#PBS -q preemptible
+#PBS -l select=1:ncpus=4:mem=32gb:ngpus=1:glist=l40s
+#PBS -l walltime=02:00:00
+#PBS -W group_list=x-ccast-prj-chayan
+#PBS -m abe
+#PBS -M m.afzalsiddique@ndus.edu
+
+
+# End-to-end smoke test of the full pipeline on a tiny subset.
+# Confirms that prepare → tokenize → train → generate → eval all run and
+# produce finite numbers. Does NOT attempt to match paper metrics.
+
+set -euo pipefail
+cd "$PBS_O_WORKDIR"
+source pbs/env.sh
+
+nvidia-smi || true
+
+SMOKE_DIR="generation/data_smoke"
+SMOKE_MODEL="generation/model_smoke"
+
+mkdir -p "$SMOKE_DIR"
+
+echo "=== Step 1/5: prepare_text (5000 rows) ==="
+python -m generation.prepare_text \
+    --input_csv /mmfs1/projects/changhui.yan/m.afzalsiddique/datasets/RecipeNLG/full_dataset.csv \
+    --output_dir "$SMOKE_DIR" \
+    --train_filename unsupervised_train.txt \
+    --test_filename unsupervised_test.txt \
+    --gold_filename gold_test_100.json \
+    --max_rows 5000 \
+    --test_size 0.1 \
+    --n_gold 5 \
+    --seed 42
+
+echo "=== Step 2/5: tokenization ==="
+python -m generation.tokenization \
+    --data_dir "$SMOKE_DIR" \
+    --train_filename unsupervised_train.txt \
+    --test_filename unsupervised_test.txt \
+    --output_h5 unsupervised.h5 \
+    --block_size 1024 \
+    --base_tokenizer gpt2
+
+echo "=== Step 3/5: train (max_steps=100) ==="
+python -m generation.run_lm_finetuning_new \
+    --h5_path "$SMOKE_DIR/unsupervised.h5" \
+    --output_dir "$SMOKE_MODEL" \
+    --model_name_or_path gpt2 \
+    --block_size 1024 \
+    --eval_split_offset 0 \
+    --per_device_train_batch_size 2 \
+    --per_device_eval_batch_size 2 \
+    --gradient_accumulation_steps 2 \
+    --num_train_epochs 1 \
+    --max_steps 100 \
+    --learning_rate 5e-5 \
+    --weight_decay 0.0 \
+    --warmup_steps 10 \
+    --lr_scheduler_type linear \
+    --logging_steps 10 \
+    --save_steps 50 \
+    --save_total_limit 2 \
+    --eval_strategy no \
+    --report_to none \
+    --dataloader_num_workers 2 \
+    --seed 42 \
+    --do_train \
+    --overwrite_output_dir
+
+echo "=== Step 4/5: generate (5 prompts × 3 seqs) ==="
+python -m generation.run_generation \
+    --model_name_or_path "$SMOKE_MODEL" \
+    --input_jsonl "$SMOKE_DIR/gold_test_100.json" \
+    --output_json "$SMOKE_DIR/generated_smoke.json" \
+    --top_p 0.9 \
+    --top_k 0 \
+    --temperature 1.0 \
+    --num_return_sequences 3 \
+    --max_new_tokens 200 \
+    --seed 42
+
+echo "=== Step 5/5: eval (skip language_check for speed) ==="
+python -m eval.replicate_metrics \
+    --gold_json "$SMOKE_DIR/gold_test_100.json" \
+    --generated_json "$SMOKE_DIR/generated_smoke.json" \
+    --output_json eval/results_smoke.json \
+    --num_return_sequences 3 \
+    --skip_language_check
+
+echo "=== Smoke test complete ==="

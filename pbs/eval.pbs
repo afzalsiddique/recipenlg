@@ -1,0 +1,25 @@
+#!/bin/bash
+#PBS -N recipenlg-eval
+#PBS -q preemptible
+#PBS -l select=1:ncpus=4:mem=16gb
+#PBS -l walltime=02:00:00
+#PBS -W group_list=x-ccast-prj-chayan
+#PBS -m abe
+#PBS -M m.afzalsiddique@ndus.edu
+#PBS -j oe
+#PBS -o logs/
+
+cd "$PBS_O_WORKDIR"
+source pbs/env.sh
+
+# language_tool_python downloads a LanguageTool jar to ~/.cache/language_tool_python
+# on first use. Make sure $JAVA_HOME points to a Java 11+ runtime.
+java -version || true
+
+python -m eval.replicate_metrics \
+    --gold_json generation/data/gold_test_100.json \
+    --generated_json generation/data/generated_recipenlg.json \
+    --output_json eval/results.json \
+    --num_return_sequences 10 \
+    --language_check_rule_skip WHITESPACE_RULE \
+    --language_tool_lang en-US
