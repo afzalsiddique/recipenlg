@@ -132,9 +132,17 @@ def main() -> int:
     tokenizer_name = args.tokenizer_name_or_path or args.model_name_or_path
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
     tokenizer.add_special_tokens({"additional_special_tokens": SPECIAL_TOKENS})
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = "<RECIPE_END>"
-    log.info("Tokenizer vocab=%d pad_token=%r", len(tokenizer), tokenizer.pad_token)
+    # pad_token MUST NOT be <RECIPE_END>: DataCollatorForLanguageModeling
+    # replaces all pad_token_id positions with -100 in labels, so reusing
+    # <RECIPE_END> as pad masks the recipe-end signal out of the loss and
+    # the model never learns to emit it. Use <|endoftext|> (50256) instead.
+    tokenizer.pad_token = "<|endoftext|>"
+    pad_id = tokenizer.convert_tokens_to_ids(tokenizer.pad_token)
+    end_token_id = tokenizer.convert_tokens_to_ids("<RECIPE_END>")
+    if pad_id == end_token_id:
+        raise RuntimeError("pad_id must differ from <RECIPE_END> id.")
+    log.info("Tokenizer vocab=%d pad_token=%r pad_id=%d end_token_id=%d",
+             len(tokenizer), tokenizer.pad_token, pad_id, end_token_id)
 
     model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path)
     model.resize_token_embeddings(len(tokenizer))

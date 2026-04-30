@@ -1,0 +1,13 @@
+{
+  "n_test_lines": 424,
+  "n_lines_scored": 422,
+  "n_pair_penalties": 617,
+  "mean_pair_penalty": 0.38168557536466774,
+  "mean_line_penalty": 0.2959715639810427,
+  "breakdown": {
+    "exact": 364,
+    "subset": 15,
+    "partial": 40,
+    "disjoint": 198
+  }
+}

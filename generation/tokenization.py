@@ -58,12 +58,15 @@ def parse_args() -> argparse.Namespace:
 def build_tokenizer(name: str, lower_case: bool):
     tokenizer = GPT2Tokenizer.from_pretrained(name, do_lower_case=lower_case)
     tokenizer.add_special_tokens({"additional_special_tokens": SPECIAL_TOKENS})
-    if tokenizer.pad_token is None:
-        tokenizer.pad_token = "<RECIPE_END>"
+    # Use <|endoftext|> (id 50256, already in base GPT-2 vocab) as pad_token.
+    # Crucial: pad_token MUST be different from <RECIPE_END>, otherwise
+    # DataCollatorForLanguageModeling masks <RECIPE_END> out of the loss and
+    # the model never learns to emit it (see CLAUDE.md "Known fixes").
+    tokenizer.pad_token = "<|endoftext|>"
     return tokenizer
 
 
-def pack_split(tokenizer, txt_path: Path, block_size: int, end_token_id: int, log) -> np.ndarray:
+def pack_split(tokenizer, txt_path: Path, block_size: int, pad_id: int, log) -> np.ndarray:
     rows = []
     last: list = []
     n_lines = 0
@@ -80,12 +83,12 @@ def pack_split(tokenizer, txt_path: Path, block_size: int, end_token_id: int, lo
                 last.extend(ids)
             else:
                 while len(last) < block_size:
-                    last.append(end_token_id)
+                    last.append(pad_id)
                 rows.append(last)
                 last = list(ids)
     if last:
         while len(last) < block_size:
-            last.append(end_token_id)
+            last.append(pad_id)
         rows.append(last)
     log.info("%s: %d input lines → %d packed rows", txt_path.name, n_lines, len(rows))
     return np.asarray(rows, dtype=np.int64)
@@ -97,8 +100,13 @@ def main() -> int:
     log.info("Args: %s", vars(args))
 
     tokenizer = build_tokenizer(args.base_tokenizer, args.lower_case)
+    pad_id = tokenizer.convert_tokens_to_ids(tokenizer.pad_token)
     end_token_id = tokenizer.convert_tokens_to_ids("<RECIPE_END>")
-    log.info("Tokenizer vocab=%d  end_token_id=%d", len(tokenizer), end_token_id)
+    log.info("Tokenizer vocab=%d  pad_token=%r pad_id=%d  end_token_id=%d",
+             len(tokenizer), tokenizer.pad_token, pad_id, end_token_id)
+    if pad_id == end_token_id:
+        raise RuntimeError("pad_id must differ from <RECIPE_END> id, otherwise the LM "
+                           "collator will mask <RECIPE_END> out of the loss.")
 
     out_path = args.data_dir / args.output_h5
     args.data_dir.mkdir(parents=True, exist_ok=True)
@@ -108,7 +116,7 @@ def main() -> int:
             if not txt_path.exists():
                 log.warning("Skipping missing split %s (%s)", split, txt_path)
                 continue
-            mat = pack_split(tokenizer, txt_path, args.block_size, end_token_id, log)
+            mat = pack_split(tokenizer, txt_path, args.block_size, pad_id, log)
             hf.create_dataset(split, data=mat)
             log.info("Wrote %s shape=%s to %s", split, mat.shape, out_path)
     log.info("Done. HDF5 file: %s", out_path)

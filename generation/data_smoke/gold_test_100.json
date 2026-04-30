@@ -1,0 +1,139 @@
+[
+  {
+    "title": "Ginger Pears",
+    "ingredients": [
+      "10 lb. pears",
+      "8 lb. sugar",
+      "4 oz. crystallized ginger",
+      "6 lemons"
+    ],
+    "directions": [
+      "Pare fruit; cut in thin slices after removing core.",
+      "Mix pears and sugar.",
+      "Place over low heat in large kettle.",
+      "Stir until sugar is melted and syrup formed.",
+      "Simmer until fruit is clear, stirring occasionally.",
+      "Add grated rind of 2 lemons and juice of all 6. Add ginger, cut in small pieces; simmer until thick.",
+      "Put in sterilized jelly glasses; cover with paraffin, or seal in sterilized pint jars while hot.",
+      "Yields approximately 18 glasses."
+    ],
+    "ner": [
+      "pears",
+      "sugar",
+      "crystallized ginger",
+      "lemons"
+    ],
+    "full_text": "<RECIPE_START> <INPUT_START> pears <NEXT_INPUT> sugar <NEXT_INPUT> crystallized ginger <NEXT_INPUT> lemons <INPUT_END> <INGR_START> 10 lb. pears <NEXT_INGR> 8 lb. sugar <NEXT_INGR> 4 oz. crystallized ginger <NEXT_INGR> 6 lemons <INGR_END> <INSTR_START> Pare fruit; cut in thin slices after removing core. <NEXT_INSTR> Mix pears and sugar. <NEXT_INSTR> Place over low heat in large kettle. <NEXT_INSTR> Stir until sugar is melted and syrup formed. <NEXT_INSTR> Simmer until fruit is clear, stirring occasionally. <NEXT_INSTR> Add grated rind of 2 lemons and juice of all 6. Add ginger, cut in small pieces; simmer until thick. <NEXT_INSTR> Put in sterilized jelly glasses; cover with paraffin, or seal in sterilized pint jars while hot. <NEXT_INSTR> Yields approximately 18 glasses. <INSTR_END> <TITLE_START> Ginger Pears <TITLE_END> <RECIPE_END>"
+  },
+  {
+    "title": "Corn Casserole",
+    "ingredients": [
+      "1 small onion, chopped fine",
+      "1/2 green pepper, chopped fine",
+      "1 can whole kernel corn (undrained)",
+      "1 can cream-style corn",
+      "1 small pkg. Jiffy corn muffin mix",
+      "3 beaten eggs",
+      "1/2 pt. sour cream",
+      "grated cheese"
+    ],
+    "directions": [
+      "Saute the onion and green pepper.",
+      "Combine the corns, corn muffin mix and beaten eggs.",
+      "Blend all ingredients, except sour cream and cheese, together in ovenproof baking dish.",
+      "Top with the sour cream and cheese.",
+      "Bake at 350\u00b0, uncovered, for about 45 minutes, or until done."
+    ],
+    "ner": [
+      "onion",
+      "green pepper",
+      "whole kernel corn",
+      "cream-style corn",
+      "corn muffin",
+      "eggs",
+      "sour cream",
+      "grated cheese"
+    ],
+    "full_text": "<RECIPE_START> <INPUT_START> onion <NEXT_INPUT> green pepper <NEXT_INPUT> whole kernel corn <NEXT_INPUT> cream-style corn <NEXT_INPUT> corn muffin <NEXT_INPUT> eggs <NEXT_INPUT> sour cream <NEXT_INPUT> grated cheese <INPUT_END> <INGR_START> 1 small onion, chopped fine <NEXT_INGR> 1/2 green pepper, chopped fine <NEXT_INGR> 1 can whole kernel corn (undrained) <NEXT_INGR> 1 can cream-style corn <NEXT_INGR> 1 small pkg. Jiffy corn muffin mix <NEXT_INGR> 3 beaten eggs <NEXT_INGR> 1/2 pt. sour cream <NEXT_INGR> grated cheese <INGR_END> <INSTR_START> Saute the onion and green pepper. <NEXT_INSTR> Combine the corns, corn muffin mix and beaten eggs. <NEXT_INSTR> Blend all ingredients, except sour cream and cheese, together in ovenproof baking dish. <NEXT_INSTR> Top with the sour cream and cheese. <NEXT_INSTR> Bake at 350\u00b0, uncovered, for about 45 minutes, or until done. <INSTR_END> <TITLE_START> Corn Casserole <TITLE_END> <RECIPE_END>"
+  },
+  {
+    "title": "Orange Spice Tea Mix",
+    "ingredients": [
+      "1 c. NutraSweet sweetened tea mix",
+      "2 tubs orange Crystal Light",
+      "2 tubs lemon Crystal Light",
+      "1 tsp. ground cinnamon",
+      "1/2 tsp. ground cloves"
+    ],
+    "directions": [
+      "Combine all ingredients and store in covered container (i.e., Tupperware).",
+      "To serve, dissolve 1 teaspoon mix in 1 cup boiling water.",
+      "One cup equals 3 calories."
+    ],
+    "ner": [
+      "ground cinnamon",
+      "ground cloves"
+    ],
+    "full_text": "<RECIPE_START> <INPUT_START> ground cinnamon <NEXT_INPUT> ground cloves <INPUT_END> <INGR_START> 1 c. NutraSweet sweetened tea mix <NEXT_INGR> 2 tubs orange Crystal Light <NEXT_INGR> 2 tubs lemon Crystal Light <NEXT_INGR> 1 tsp. ground cinnamon <NEXT_INGR> 1/2 tsp. ground cloves <INGR_END> <INSTR_START> Combine all ingredients and store in covered container (i.e., Tupperware). <NEXT_INSTR> To serve, dissolve 1 teaspoon mix in 1 cup boiling water. <NEXT_INSTR> One cup equals 3 calories. <INSTR_END> <TITLE_START> Orange Spice Tea Mix <TITLE_END> <RECIPE_END>"
+  },
+  {
+    "title": "Caramel Apple Bake",
+    "ingredients": [
+      "6 to 8 sliced apples",
+      "2 Tbsp. Bisquick",
+      "1 tsp. ground cinnamon",
+      "20 caramel candies, cut into fourths",
+      "1/2 c. nuts",
+      "1/4 c. brown sugar",
+      "1/4 c. soft butter",
+      "1 c. Bisquick"
+    ],
+    "directions": [
+      "Preheat oven to 375\u00b0.",
+      "Mix apples, 2 tablespoons Bisquick, cinnamon and caramel candies.",
+      "Spread in greased casserole dish. Mix nuts, brown sugar, butter and 1 cup Bisquick.",
+      "Sprinkle on top.",
+      "Bake 35 to 40 minutes at 375\u00b0."
+    ],
+    "ner": [
+      "apples",
+      "Bisquick",
+      "ground cinnamon",
+      "caramel candies",
+      "nuts",
+      "brown sugar",
+      "butter",
+      "Bisquick"
+    ],
+    "full_text": "<RECIPE_START> <INPUT_START> apples <NEXT_INPUT> Bisquick <NEXT_INPUT> ground cinnamon <NEXT_INPUT> caramel candies <NEXT_INPUT> nuts <NEXT_INPUT> brown sugar <NEXT_INPUT> butter <NEXT_INPUT> Bisquick <INPUT_END> <INGR_START> 6 to 8 sliced apples <NEXT_INGR> 2 Tbsp. Bisquick <NEXT_INGR> 1 tsp. ground cinnamon <NEXT_INGR> 20 caramel candies, cut into fourths <NEXT_INGR> 1/2 c. nuts <NEXT_INGR> 1/4 c. brown sugar <NEXT_INGR> 1/4 c. soft butter <NEXT_INGR> 1 c. Bisquick <INGR_END> <INSTR_START> Preheat oven to 375\u00b0. <NEXT_INSTR> Mix apples, 2 tablespoons Bisquick, cinnamon and caramel candies. <NEXT_INSTR> Spread in greased casserole dish. Mix nuts, brown sugar, butter and 1 cup Bisquick. <NEXT_INSTR> Sprinkle on top. <NEXT_INSTR> Bake 35 to 40 minutes at 375\u00b0. <INSTR_END> <TITLE_START> Caramel Apple Bake <TITLE_END> <RECIPE_END>"
+  },
+  {
+    "title": "Colonial Cheese Biscuits",
+    "ingredients": [
+      "1 1/2 lb. sharp Cheddar cheese",
+      "2 sticks butter, softened",
+      "2 c. plus 2 Tbsp. flour",
+      "1 1/2 tsp. salt",
+      "1 1/2 tsp. paprika",
+      "confectioners sugar"
+    ],
+    "directions": [
+      "These pancakes are as big as a dinner plate and formerly even bigger (12-inches in diameter!).",
+      "Nowadays you may find such big pancakes on the menu of a restaurant, but at home, we make them the dinner plate size.",
+      "They are either eaten as a savory (with smoked sausage or bacon) or as a sweet (plain with molasses or golden syrup or with apples).",
+      "Pancakes are best when made with yeast and they should be served piping hot.",
+      "Use two skillets when available. Keep the pancakes hot on steam, or covered in the oven.",
+      "Cold pancakes are awful!",
+      "The following recipe is a luxury one, for special occasions, as many eggs are used in preparing (instead of yeast)."
+    ],
+    "ner": [
+      "Cheddar cheese",
+      "butter",
+      "flour",
+      "salt",
+      "paprika",
+      "confectioners sugar"
+    ],
+    "full_text": "<RECIPE_START> <INPUT_START> Cheddar cheese <NEXT_INPUT> butter <NEXT_INPUT> flour <NEXT_INPUT> salt <NEXT_INPUT> paprika <NEXT_INPUT> confectioners sugar <INPUT_END> <INGR_START> 1 1/2 lb. sharp Cheddar cheese <NEXT_INGR> 2 sticks butter, softened <NEXT_INGR> 2 c. plus 2 Tbsp. flour <NEXT_INGR> 1 1/2 tsp. salt <NEXT_INGR> 1 1/2 tsp. paprika <NEXT_INGR> confectioners sugar <INGR_END> <INSTR_START> These pancakes are as big as a dinner plate and formerly even bigger (12-inches in diameter!). <NEXT_INSTR> Nowadays you may find such big pancakes on the menu of a restaurant, but at home, we make them the dinner plate size. <NEXT_INSTR> They are either eaten as a savory (with smoked sausage or bacon) or as a sweet (plain with molasses or golden syrup or with apples). <NEXT_INSTR> Pancakes are best when made with yeast and they should be served piping hot. <NEXT_INSTR> Use two skillets when available. Keep the pancakes hot on steam, or covered in the oven. <NEXT_INSTR> Cold pancakes are awful! <NEXT_INSTR> The following recipe is a luxury one, for special occasions, as many eggs are used in preparing (instead of yeast). <INSTR_END> <TITLE_START> Colonial Cheese Biscuits <TITLE_END> <RECIPE_END>"
+  }
+]

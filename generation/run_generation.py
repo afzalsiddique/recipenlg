@@ -100,8 +100,11 @@ def main() -> int:
 
     end_token_id = tokenizer.convert_tokens_to_ids("<RECIPE_END>")
     if tokenizer.pad_token_id is None:
-        tokenizer.pad_token = "<RECIPE_END>"
+        tokenizer.pad_token = "<|endoftext|>"
     pad_id = tokenizer.convert_tokens_to_ids(tokenizer.pad_token)
+    if pad_id == end_token_id:
+        log.warning("pad_id == <RECIPE_END> id (%d); generation will still work but "
+                    "this matches the pre-fix-(B) training setup.", pad_id)
 
     gen_kwargs = dict(
         do_sample=args.do_sample,
