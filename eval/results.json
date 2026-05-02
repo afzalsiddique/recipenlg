@@ -1,7 +1,7 @@
 {
-  "cosine_similarity_mean": 0.7576648152312443,
+  "cosine_similarity_mean": 0.7578133672586423,
   "language_check_error": "Detected java 11.0. LanguageTool requires Java >= 17 for version latest.",
-  "bleu_mean": 0.8787372858411725,
-  "gleu_mean": 0.7485320516508054,
-  "wer_mean": 0.5879888393708748
+  "bleu_mean": 0.8716572058914592,
+  "gleu_mean": 0.7428758685770345,
+  "wer_mean": 0.5930198186554356
 }

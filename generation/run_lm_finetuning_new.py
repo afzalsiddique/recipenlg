@@ -16,6 +16,7 @@ import h5py
 import torch
 from torch.utils.data import Dataset
 from transformers import (
+    AutoConfig,
     AutoModelForCausalLM,
     AutoTokenizer,
     DataCollatorForLanguageModeling,
@@ -70,13 +71,31 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--num_train_epochs", type=float, default=2.0)
     p.add_argument("--max_steps", type=int, default=-1)
     p.add_argument("--learning_rate", type=float, default=5e-5)
-    p.add_argument("--weight_decay", type=float, default=0.0)
-    p.add_argument("--warmup_steps", type=int, default=1000)
+    p.add_argument("--weight_decay", type=float, default=0.01,
+                   help="Transferred default: AdamW WD=0.01 (autoresearch baseline used Muon-cautious "
+                        "WD=0.2; AdamW magnitude differs, so use modern fine-tuning default).")
+    p.add_argument("--warmup_steps", type=int, default=0,
+                   help="If --warmup_ratio is non-zero, --warmup_steps is ignored by HF Trainer.")
+    p.add_argument("--warmup_ratio", type=float, default=0.0,
+                   help="Transferred from autoresearch WARMUP_RATIO=0.0 (warmup hurt val_bpb in prior runs).")
     p.add_argument("--lr_scheduler_type", default="linear")
+    p.add_argument("--lr_min_ratio", type=float, default=0.0,
+                   help="Min LR as fraction of peak (only used by cosine_with_min_lr scheduler). "
+                        "Mirrors autoresearch FINAL_LR_FRAC.")
+    p.add_argument("--label_smoothing_factor", type=float, default=0.0,
+                   help="Cross-entropy label smoothing. Pending autoresearch experiment #2 result.")
     p.add_argument("--adam_beta1", type=float, default=0.9)
-    p.add_argument("--adam_beta2", type=float, default=0.999)
-    p.add_argument("--adam_epsilon", type=float, default=1e-8)
-    p.add_argument("--max_grad_norm", type=float, default=1.0)
+    p.add_argument("--adam_beta2", type=float, default=0.95,
+                   help="Transferred default: autoresearch uses 0.95; modern LM training prefers "
+                        "~0.95 over 0.999 for fine-tuning convergence behavior.")
+    p.add_argument("--adam_epsilon", type=float, default=1e-8,
+                   help="Will be re-evaluated after autoresearch experiment #3 (1e-10 vs 1e-8).")
+    p.add_argument("--max_grad_norm", type=float, default=1.0,
+                   help="Kept at 1.0 for fine-tuning safety even though autoresearch baseline does not clip.")
+    # Model dropout (newly exposed; previously hardcoded in GPT-2 config at 0.1 each)
+    p.add_argument("--attn_pdrop", type=float, default=0.1)
+    p.add_argument("--embd_pdrop", type=float, default=0.1)
+    p.add_argument("--resid_pdrop", type=float, default=0.1)
     # Logging / saving
     p.add_argument("--logging_steps", type=int, default=100)
     p.add_argument("--save_steps", type=int, default=5000)
@@ -144,7 +163,13 @@ def main() -> int:
     log.info("Tokenizer vocab=%d pad_token=%r pad_id=%d end_token_id=%d",
              len(tokenizer), tokenizer.pad_token, pad_id, end_token_id)
 
-    model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path)
+    config = AutoConfig.from_pretrained(args.model_name_or_path)
+    config.attn_pdrop = args.attn_pdrop
+    config.embd_pdrop = args.embd_pdrop
+    config.resid_pdrop = args.resid_pdrop
+    log.info("Model dropout: attn=%.3f embd=%.3f resid=%.3f",
+             args.attn_pdrop, args.embd_pdrop, args.resid_pdrop)
+    model = AutoModelForCausalLM.from_pretrained(args.model_name_or_path, config=config)
     model.resize_token_embeddings(len(tokenizer))
     model.config.pad_token_id = tokenizer.convert_tokens_to_ids(tokenizer.pad_token)
     log.info("Loaded model %s, resized to %d embeddings", args.model_name_or_path, len(tokenizer))
@@ -171,7 +196,9 @@ def main() -> int:
         learning_rate=args.learning_rate,
         weight_decay=args.weight_decay,
         warmup_steps=args.warmup_steps,
+        warmup_ratio=args.warmup_ratio,
         lr_scheduler_type=args.lr_scheduler_type,
+        label_smoothing_factor=args.label_smoothing_factor,
         adam_beta1=args.adam_beta1,
         adam_beta2=args.adam_beta2,
         adam_epsilon=args.adam_epsilon,
@@ -185,6 +212,8 @@ def main() -> int:
         seed=args.seed,
         **precision,
     )
+    if args.lr_scheduler_type == "cosine_with_min_lr" and args.lr_min_ratio > 0:
+        ta_kwargs["lr_scheduler_kwargs"] = {"min_lr_rate": args.lr_min_ratio}
 
     import inspect
     ta_params = inspect.signature(TrainingArguments.__init__).parameters

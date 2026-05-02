@@ -2,10 +2,11 @@ logs/
 *.[eo][0-9][0-9][0-9][0-9][0-9][0-9]
 *.cpython
 *.pyc
-generation/data/unsupervised*
+generation/data/
 generation/data_smoke/unsupervised*
 generation/model_out/
 generation/model_smoke/
 ner/model_v3
 backups/
 _old_v1/
+results/

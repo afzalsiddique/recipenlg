@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -N recipenlg-train-lm
 #PBS -q gpus
-#PBS -l select=1:ncpus=8:mem=128gb:ngpus=1:glist=a100
+#PBS -l select=1:ncpus=8:mem=64gb:ngpus=1:glist=a100
 #PBS -l walltime=168:00:00
 #PBS -W group_list=x-ccast-prj-chayan
 #PBS -m abe
@@ -25,13 +25,18 @@ python -m generation.run_lm_finetuning_new \
     --gradient_accumulation_steps 8 \
     --num_train_epochs 2.0 \
     --learning_rate 5e-5 \
-    --weight_decay 0.0 \
-    --warmup_steps 1000 \
+    --weight_decay 0.01 \
+    --warmup_steps 0 \
+    --warmup_ratio 0.0 \
     --lr_scheduler_type linear \
+    --label_smoothing_factor 0.0 \
     --adam_beta1 0.9 \
-    --adam_beta2 0.999 \
+    --adam_beta2 0.95 \
     --adam_epsilon 1e-8 \
     --max_grad_norm 1.0 \
+    --attn_pdrop 0.1 \
+    --embd_pdrop 0.1 \
+    --resid_pdrop 0.1 \
     --logging_steps 100 \
     --save_steps 5000 \
     --save_total_limit 2 \
