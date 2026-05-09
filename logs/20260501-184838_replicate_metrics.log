@@ -1,0 +1,17 @@
+2026-05-01 18:48:38,660 [INFO] replicate_metrics: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260501-184838_replicate_metrics.log
+2026-05-01 18:48:38,661 [INFO] replicate_metrics: PID=351873 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-05-01 18:48:38,661 [INFO] replicate_metrics: Args: {'gold_json': PosixPath('generation/data/gold_test_100.json'), 'generated_json': PosixPath('generation/data/generated_recipenlg.json'), 'output_json': PosixPath('eval/results.json'), 'num_return_sequences': 10, 'language_check_rule_skip': 'WHITESPACE_RULE', 'language_tool_lang': 'en-US', 'skip_language_check': False}
+2026-05-01 18:48:38,853 [INFO] replicate_metrics: Loaded gold=100 generated=1000 K=10
+2026-05-01 18:48:40,059 [INFO] replicate_metrics: Cosine similarity (mean of max-of-K): 0.7578  (paper: 0.666)
+2026-05-01 18:48:40,825 [ERROR] replicate_metrics: LanguageCheck failed: Detected java 11.0. LanguageTool requires Java >= 17 for version latest.
+2026-05-01 18:48:42,633 [INFO] replicate_metrics: BLEU (sentence, smoothing4): 0.8717  (paper: 0.866)
+2026-05-01 18:48:44,488 [INFO] replicate_metrics: GLEU: 0.7429  (paper: 0.662)
+2026-05-01 18:48:44,720 [INFO] replicate_metrics: WER (mean of min-of-K): 0.5930  (paper: 0.751)
+2026-05-01 18:48:44,723 [INFO] replicate_metrics: Wrote results to eval/results.json
+2026-05-01 18:48:44,723 [INFO] replicate_metrics: RESULTS: {
+  "cosine_similarity_mean": 0.7578133672586423,
+  "language_check_error": "Detected java 11.0. LanguageTool requires Java >= 17 for version latest.",
+  "bleu_mean": 0.8716572058914592,
+  "gleu_mean": 0.7428758685770345,
+  "wer_mean": 0.5930198186554356
+}

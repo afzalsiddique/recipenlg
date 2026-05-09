@@ -1,0 +1,52 @@
+2026-04-29 02:38:17,529 [INFO] run_lm_finetuning_new: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260429-023817_run_lm_finetuning_new.log
+2026-04-29 02:38:17,529 [INFO] run_lm_finetuning_new: PID=1572031 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-04-29 02:38:17,529 [INFO] run_lm_finetuning_new: Args: {
+  "h5_path": "generation/data/unsupervised.h5",
+  "output_dir": "generation/model_out",
+  "model_name_or_path": "gpt2",
+  "tokenizer_name_or_path": "None",
+  "block_size": "1024",
+  "eval_split_offset": "8100",
+  "per_device_train_batch_size": "4",
+  "per_device_eval_batch_size": "4",
+  "gradient_accumulation_steps": "8",
+  "num_train_epochs": "2.0",
+  "max_steps": "-1",
+  "learning_rate": "5e-05",
+  "weight_decay": "0.0",
+  "warmup_steps": "1000",
+  "lr_scheduler_type": "linear",
+  "adam_beta1": "0.9",
+  "adam_beta2": "0.999",
+  "adam_epsilon": "1e-08",
+  "max_grad_norm": "1.0",
+  "logging_steps": "100",
+  "save_steps": "5000",
+  "save_total_limit": "2",
+  "eval_strategy": "steps",
+  "eval_steps": "5000",
+  "report_to": "none",
+  "dataloader_num_workers": "4",
+  "do_train": "True",
+  "do_eval": "True",
+  "seed": "42",
+  "overwrite_output_dir": "True"
+}
+2026-04-29 02:38:17,933 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/gpt2/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-04-29 02:38:18,039 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-29 02:38:18,113 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 02:38:18,172 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-29 02:38:18,232 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 02:38:18,297 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-29 02:38:18,507 [INFO] run_lm_finetuning_new: Tokenizer vocab=50270 pad_token='<RECIPE_END>'
+2026-04-29 02:38:18,568 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/gpt2/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-04-29 02:38:18,971 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/gpt2/resolve/main/generation_config.json "HTTP/1.1 200 OK"
+2026-04-29 02:38:20,065 [INFO] run_lm_finetuning_new: Loaded model gpt2, resized to 50270 embeddings
+2026-04-29 02:38:21,455 [INFO] run_lm_finetuning_new: Train dataset rows=563676
+2026-04-29 02:38:21,455 [INFO] run_lm_finetuning_new: Eval dataset rows=21583
+2026-04-29 02:38:21,717 [INFO] run_lm_finetuning_new: CUDA bf16 supported -> using bf16.
+2026-04-29 02:38:21,717 [INFO] run_lm_finetuning_new: overwrite_output_dir not supported by this transformers version; leaving generation/model_out in place (Trainer will overwrite checkpoints).
+2026-04-29 02:38:22,431 [INFO] run_lm_finetuning_new: Starting training
+2026-04-29 08:18:13,758 [INFO] run_lm_finetuning_new: Training finished: {'train_runtime': 20391.1655, 'train_samples_per_second': 55.286, 'train_steps_per_second': 1.728, 'total_flos': 5.89136189718528e+17, 'train_loss': 1.3974466578851463, 'epoch': 2.0}
+2026-04-29 08:18:14,058 [INFO] run_lm_finetuning_new: Starting evaluation
+2026-04-29 08:20:27,522 [INFO] run_lm_finetuning_new: Eval metrics: {'eval_loss': 1.2515231370925903, 'eval_runtime': 133.4606, 'eval_samples_per_second': 161.718, 'eval_steps_per_second': 40.431, 'epoch': 2.0, 'perplexity': 3.495663279047217}

@@ -1,0 +1,38 @@
+2026-04-30 01:12:39,221 [INFO] run_generation: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260430-011239_run_generation.log
+2026-04-30 01:12:39,221 [INFO] run_generation: PID=3458745 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-04-30 01:12:39,221 [INFO] run_generation: Args: {
+  "model_name_or_path": "generation/model_out",
+  "input_jsonl": "generation/data/gold_test_100.json",
+  "output_json": "generation/data/generated_recipenlg.json",
+  "interactive": "False",
+  "top_p": "0.9",
+  "top_k": "0",
+  "temperature": "1.0",
+  "num_return_sequences": "10",
+  "max_new_tokens": "950",
+  "do_sample": "True",
+  "seed": "42",
+  "no_cuda": "False"
+}
+2026-04-30 01:12:39,312 [INFO] run_generation: Device=cuda
+2026-04-30 01:12:42,785 [INFO] run_generation: Model max positions: 1024
+2026-04-30 01:12:42,785 [INFO] run_generation: Decoding kwargs: {'do_sample': True, 'top_p': 0.9, 'top_k': 0, 'temperature': 1.0, 'max_new_tokens': 950, 'num_return_sequences': 10, 'eos_token_id': 50266, 'pad_token_id': 50256}
+2026-04-30 01:12:42,802 [INFO] run_generation: Loaded 100 gold prompts from generation/data/gold_test_100.json
+2026-04-30 01:13:06,246 [INFO] run_generation: Generated 10/100 gold prompts (100 total recipes)
+2026-04-30 01:13:24,035 [INFO] run_generation: Generated 20/100 gold prompts (200 total recipes)
+2026-04-30 01:13:42,530 [INFO] run_generation: Generated 30/100 gold prompts (300 total recipes)
+2026-04-30 01:13:59,787 [INFO] run_generation: Generated 40/100 gold prompts (400 total recipes)
+2026-04-30 01:14:04,085 [INFO] run_generation: Prompt 42: clamping max_new_tokens 950 -> 924 (prompt_len=100)
+2026-04-30 01:14:29,109 [INFO] run_generation: Generated 50/100 gold prompts (500 total recipes)
+2026-04-30 01:14:34,905 [INFO] run_generation: Prompt 54: clamping max_new_tokens 950 -> 943 (prompt_len=81)
+2026-04-30 01:14:47,998 [INFO] run_generation: Generated 60/100 gold prompts (600 total recipes)
+2026-04-30 01:15:06,099 [INFO] run_generation: Generated 70/100 gold prompts (700 total recipes)
+2026-04-30 01:15:08,193 [INFO] run_generation: Prompt 72: clamping max_new_tokens 950 -> 942 (prompt_len=82)
+2026-04-30 01:15:15,162 [INFO] run_generation: Prompt 74: clamping max_new_tokens 950 -> 948 (prompt_len=76)
+2026-04-30 01:15:29,106 [INFO] run_generation: Generated 80/100 gold prompts (800 total recipes)
+2026-04-30 01:15:46,023 [INFO] run_generation: Prompt 89: clamping max_new_tokens 950 -> 946 (prompt_len=78)
+2026-04-30 01:15:48,602 [INFO] run_generation: Generated 90/100 gold prompts (900 total recipes)
+2026-04-30 01:15:48,602 [INFO] run_generation: Prompt 90: clamping max_new_tokens 950 -> 936 (prompt_len=88)
+2026-04-30 01:15:56,594 [INFO] run_generation: Prompt 94: clamping max_new_tokens 950 -> 945 (prompt_len=79)
+2026-04-30 01:16:08,518 [INFO] run_generation: Generated 100/100 gold prompts (1000 total recipes)
+2026-04-30 01:16:08,528 [INFO] run_generation: Wrote 1000 generated recipes to generation/data/generated_recipenlg.json

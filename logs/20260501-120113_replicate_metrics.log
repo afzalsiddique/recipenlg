@@ -1,0 +1,16 @@
+2026-05-01 12:01:13,328 [INFO] replicate_metrics: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260501-120113_replicate_metrics.log
+2026-05-01 12:01:13,329 [INFO] replicate_metrics: PID=177866 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-05-01 12:01:13,329 [INFO] replicate_metrics: Args: {'gold_json': PosixPath('generation/data_smoke/gold_test_100.json'), 'generated_json': PosixPath('generation/data_smoke/generated_smoke.json'), 'output_json': PosixPath('eval/results_smoke.json'), 'num_return_sequences': 3, 'language_check_rule_skip': 'WHITESPACE_RULE', 'language_tool_lang': 'en-US', 'skip_language_check': True}
+2026-05-01 12:01:13,468 [INFO] replicate_metrics: Loaded gold=5 generated=15 K=3
+2026-05-01 12:01:13,487 [INFO] replicate_metrics: Cosine similarity (mean of max-of-K): 0.3263  (paper: 0.666)
+2026-05-01 12:01:13,487 [INFO] replicate_metrics: Skipping LanguageCheck (per --skip_language_check).
+2026-05-01 12:01:13,502 [INFO] replicate_metrics: BLEU (sentence, smoothing4): 0.4792  (paper: 0.866)
+2026-05-01 12:01:13,518 [INFO] replicate_metrics: GLEU: 0.4271  (paper: 0.662)
+2026-05-01 12:01:13,520 [INFO] replicate_metrics: WER (mean of min-of-K): 0.9628  (paper: 0.751)
+2026-05-01 12:01:13,524 [INFO] replicate_metrics: Wrote results to eval/results_smoke.json
+2026-05-01 12:01:13,524 [INFO] replicate_metrics: RESULTS: {
+  "cosine_similarity_mean": 0.3262685514467498,
+  "bleu_mean": 0.4791689762443646,
+  "gleu_mean": 0.4271435570432658,
+  "wer_mean": 0.9627834114721485
+}

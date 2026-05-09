@@ -1,0 +1,39 @@
+2026-04-29 02:09:45,000 [INFO] train_ner: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260429-020944_train_ner.log
+2026-04-29 02:09:45,000 [INFO] train_ner: PID=1528091 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-04-29 02:09:45,000 [INFO] train_ner: Args: {'train_files': [PosixPath('/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/ner/dataset/train_0.json'), PosixPath('/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/ner/dataset/train_1.json')], 'output_dir': PosixPath('ner/model_v3'), 'label': 'food', 'n_iter': 30, 'dropout': 0.2, 'batch_min': 4.0, 'batch_max': 32.0, 'batch_compound': 1.001, 'seed': 42, 'blank_lang': 'en'}
+2026-04-29 02:09:45,032 [INFO] train_ner: Loaded 1690 annotated lines from 2 files.
+2026-04-29 02:09:45,034 [INFO] train_ner: Built 1690 training examples (skipped 655 overlapping spans).
+2026-04-29 02:09:45,191 [INFO] spacy: Created vocabulary
+2026-04-29 02:09:45,192 [INFO] spacy: Finished initializing nlp object
+2026-04-29 02:09:45,568 [INFO] train_ner: Initialized blank en pipeline with NER label 'food'.
+2026-04-29 02:09:51,012 [INFO] train_ner: Epoch 1/30: losses={'ner': np.float32(1443.4241)}
+2026-04-29 02:09:55,262 [INFO] train_ner: Epoch 2/30: losses={'ner': np.float32(700.4382)}
+2026-04-29 02:09:58,906 [INFO] train_ner: Epoch 3/30: losses={'ner': np.float32(534.0379)}
+2026-04-29 02:10:02,159 [INFO] train_ner: Epoch 4/30: losses={'ner': np.float32(452.96878)}
+2026-04-29 02:10:05,119 [INFO] train_ner: Epoch 5/30: losses={'ner': np.float32(370.82486)}
+2026-04-29 02:10:07,859 [INFO] train_ner: Epoch 6/30: losses={'ner': np.float32(300.17816)}
+2026-04-29 02:10:10,432 [INFO] train_ner: Epoch 7/30: losses={'ner': np.float32(305.9199)}
+2026-04-29 02:10:13,124 [INFO] train_ner: Epoch 8/30: losses={'ner': np.float32(251.48798)}
+2026-04-29 02:10:15,480 [INFO] train_ner: Epoch 9/30: losses={'ner': np.float32(230.4012)}
+2026-04-29 02:10:17,736 [INFO] train_ner: Epoch 10/30: losses={'ner': np.float32(212.75252)}
+2026-04-29 02:10:19,893 [INFO] train_ner: Epoch 11/30: losses={'ner': np.float32(208.18124)}
+2026-04-29 02:10:21,977 [INFO] train_ner: Epoch 12/30: losses={'ner': np.float32(197.18573)}
+2026-04-29 02:10:24,022 [INFO] train_ner: Epoch 13/30: losses={'ner': np.float32(181.12926)}
+2026-04-29 02:10:26,032 [INFO] train_ner: Epoch 14/30: losses={'ner': np.float32(150.42662)}
+2026-04-29 02:10:27,996 [INFO] train_ner: Epoch 15/30: losses={'ner': np.float32(159.26634)}
+2026-04-29 02:10:29,911 [INFO] train_ner: Epoch 16/30: losses={'ner': np.float32(147.56282)}
+2026-04-29 02:10:31,812 [INFO] train_ner: Epoch 17/30: losses={'ner': np.float32(128.29543)}
+2026-04-29 02:10:33,697 [INFO] train_ner: Epoch 18/30: losses={'ner': np.float32(125.89673)}
+2026-04-29 02:10:35,584 [INFO] train_ner: Epoch 19/30: losses={'ner': np.float32(130.28004)}
+2026-04-29 02:10:37,478 [INFO] train_ner: Epoch 20/30: losses={'ner': np.float32(147.43228)}
+2026-04-29 02:10:39,380 [INFO] train_ner: Epoch 21/30: losses={'ner': np.float32(110.77237)}
+2026-04-29 02:10:41,278 [INFO] train_ner: Epoch 22/30: losses={'ner': np.float32(98.0684)}
+2026-04-29 02:10:43,178 [INFO] train_ner: Epoch 23/30: losses={'ner': np.float32(118.65052)}
+2026-04-29 02:10:45,079 [INFO] train_ner: Epoch 24/30: losses={'ner': np.float32(109.3623)}
+2026-04-29 02:10:46,986 [INFO] train_ner: Epoch 25/30: losses={'ner': np.float32(99.21886)}
+2026-04-29 02:10:48,887 [INFO] train_ner: Epoch 26/30: losses={'ner': np.float32(112.12352)}
+2026-04-29 02:10:50,811 [INFO] train_ner: Epoch 27/30: losses={'ner': np.float32(94.26634)}
+2026-04-29 02:10:52,670 [INFO] train_ner: Epoch 28/30: losses={'ner': np.float32(101.57805)}
+2026-04-29 02:10:54,553 [INFO] train_ner: Epoch 29/30: losses={'ner': np.float32(87.92372)}
+2026-04-29 02:10:56,431 [INFO] train_ner: Epoch 30/30: losses={'ner': np.float32(87.472275)}
+2026-04-29 02:10:56,463 [INFO] train_ner: Saved trained pipeline to ner/model_v3

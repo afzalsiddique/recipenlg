@@ -1,0 +1,22 @@
+2026-05-04 16:18:39,143 [INFO] run_generation: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260504-161839_run_generation.log
+2026-05-04 16:18:39,143 [INFO] run_generation: PID=783547 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-05-04 16:18:39,144 [INFO] run_generation: Args: {
+  "model_name_or_path": "generation/model_smoke",
+  "input_jsonl": "generation/data_smoke/gold_test_100.json",
+  "output_json": "generation/data_smoke/generated_smoke.json",
+  "interactive": "False",
+  "top_p": "0.9",
+  "top_k": "0",
+  "temperature": "1.0",
+  "num_return_sequences": "3",
+  "max_new_tokens": "200",
+  "do_sample": "True",
+  "seed": "42",
+  "no_cuda": "False"
+}
+2026-05-04 16:18:39,220 [INFO] run_generation: Device=cuda
+2026-05-04 16:18:41,029 [INFO] run_generation: Model max positions: 1024
+2026-05-04 16:18:41,029 [INFO] run_generation: Decoding kwargs: {'do_sample': True, 'top_p': 0.9, 'top_k': 0, 'temperature': 1.0, 'max_new_tokens': 200, 'num_return_sequences': 3, 'eos_token_id': 50266, 'pad_token_id': 50256}
+2026-05-04 16:18:41,029 [INFO] run_generation: Loaded 5 gold prompts from generation/data_smoke/gold_test_100.json
+2026-05-04 16:18:47,136 [INFO] run_generation: Generated 5/5 gold prompts (15 total recipes)
+2026-05-04 16:18:47,139 [INFO] run_generation: Wrote 15 generated recipes to generation/data_smoke/generated_smoke.json

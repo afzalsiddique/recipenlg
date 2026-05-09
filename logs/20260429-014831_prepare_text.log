@@ -1,0 +1,10 @@
+2026-04-29 01:48:31,166 [INFO] prepare_text: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260429-014831_prepare_text.log
+2026-04-29 01:48:31,167 [INFO] prepare_text: PID=3065163 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-04-29 01:48:31,167 [INFO] prepare_text: Args: {'input_csv': PosixPath('/mmfs1/projects/changhui.yan/m.afzalsiddique/datasets/RecipeNLG/full_dataset.csv'), 'output_dir': PosixPath('generation/data_smoke'), 'train_filename': 'unsupervised_train.txt', 'test_filename': 'unsupervised_test.txt', 'gold_filename': 'gold_test_100.json', 'max_rows': 5000, 'test_size': 0.1, 'n_gold': 5, 'min_title_len': 4, 'min_directions_count': 2, 'min_directions_chars': 30, 'min_ingredients_chars': 2, 'seed': 42}
+2026-04-29 01:48:31,168 [INFO] prepare_text: Reading /mmfs1/projects/changhui.yan/m.afzalsiddique/datasets/RecipeNLG/full_dataset.csv
+2026-04-29 01:48:31,275 [INFO] prepare_text: Loaded raw rows: 5000, cols: ['Unnamed: 0', 'title', 'ingredients', 'directions', 'link', 'source', 'NER']
+2026-04-29 01:48:31,388 [INFO] prepare_text: Kept 4132 / 5000 rows after filtering
+2026-04-29 01:48:31,391 [INFO] prepare_text: Split: train=3718 test=414
+2026-04-29 01:48:31,391 [INFO] prepare_text: Writing 3718 recipes to generation/data_smoke/unsupervised_train.txt
+2026-04-29 01:48:31,655 [INFO] prepare_text: Writing 414 recipes to generation/data_smoke/unsupervised_test.txt
+2026-04-29 01:48:31,928 [INFO] prepare_text: Wrote 5 gold recipes to generation/data_smoke/gold_test_100.json

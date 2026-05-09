@@ -1,0 +1,14 @@
+2026-05-04 16:18:10,267 [INFO] tokenization: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260504-161810_tokenization.log
+2026-05-04 16:18:10,268 [INFO] tokenization: PID=783275 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-05-04 16:18:10,268 [INFO] tokenization: Args: {'data_dir': PosixPath('generation/data_smoke'), 'train_filename': 'unsupervised_train.txt', 'test_filename': 'unsupervised_test.txt', 'output_h5': 'unsupervised.h5', 'block_size': 1024, 'base_tokenizer': 'gpt2', 'lower_case': False}
+2026-05-04 16:18:10,444 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/gpt2/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-05-04 16:18:10,516 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 16:18:10,574 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-05-04 16:18:10,633 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-05-04 16:18:10,695 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/openai-community/gpt2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-05-04 16:18:10,844 [INFO] tokenization: Tokenizer vocab=50270  pad_token='<|endoftext|>' pad_id=50256  end_token_id=50266
+2026-05-04 16:18:12,035 [INFO] tokenization: unsupervised_train.txt: 3718 input lines → 733 packed rows
+2026-05-04 16:18:12,062 [INFO] tokenization: Wrote train shape=(733, 1024) to generation/data_smoke/unsupervised.h5
+2026-05-04 16:18:12,190 [INFO] tokenization: unsupervised_test.txt: 414 input lines → 80 packed rows
+2026-05-04 16:18:12,193 [INFO] tokenization: Wrote test shape=(80, 1024) to generation/data_smoke/unsupervised.h5
+2026-05-04 16:18:12,194 [INFO] tokenization: Done. HDF5 file: generation/data_smoke/unsupervised.h5
