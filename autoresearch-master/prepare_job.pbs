@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -N recipenlg_prepare
+#PBS -l select=1:ncpus=4:mem=16gb
+#PBS -l walltime=00:30:00
+#PBS -q default
+#PBS -m abe
+
+cd /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/autoresearch-master
+
+export PATH="/mmfs1/home/m.afzalsiddique/.local/bin:$PATH"
+
+uv run prepare.py

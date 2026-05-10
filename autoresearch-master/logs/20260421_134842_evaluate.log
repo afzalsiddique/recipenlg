@@ -1,0 +1,8 @@
+2026-04-21 13:48:42,410 INFO evaluate: Loading 100 test recipes from validation shard
+2026-04-21 13:48:45,960 INFO evaluate: Loaded 100 valid test recipes
+2026-04-21 13:48:45,960 INFO evaluate: 
+============================================================
+2026-04-21 13:48:45,960 INFO evaluate: Evaluating: baseline (checkpoints/baseline.pt)
+2026-04-21 13:48:45,961 INFO evaluate: ============================================================
+2026-04-21 13:48:45,961 INFO evaluate: Loading model from checkpoints/baseline.pt
+2026-04-21 13:48:46,190 INFO evaluate: Model loaded: val_bpb=0.560673998997357, params=11.5M

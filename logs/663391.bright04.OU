@@ -1,0 +1,10 @@
+Project dir: /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+Python: /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/bin/python
+Python 3.13.5
+2026-04-29 12:26:27,874 [INFO] eval_ner: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260429-122627_eval_ner.log
+2026-04-29 12:26:27,874 [INFO] eval_ner: PID=1730352 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-04-29 12:26:27,874 [INFO] eval_ner: Args: {'test_files': [PosixPath('/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/ner/dataset/test_0.json'), PosixPath('/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/ner/dataset/test_1.json')], 'model_dir': PosixPath('ner/model_v3'), 'label': 'food', 'results_path': PosixPath('ner/ner_results.json')}
+2026-04-29 12:26:28,182 [INFO] eval_ner: Loaded NER pipeline from ner/model_v3
+2026-04-29 12:26:28,209 [INFO] eval_ner: Loaded 424 test lines from 2 files
+2026-04-29 12:26:28,824 [INFO] eval_ner: Results: {'n_test_lines': 424, 'n_lines_scored': 422, 'n_pair_penalties': 617, 'mean_pair_penalty': 0.38168557536466774, 'mean_line_penalty': 0.2959715639810427, 'breakdown': {'exact': 364, 'subset': 15, 'partial': 40, 'disjoint': 198}}
+2026-04-29 12:26:28,827 [INFO] eval_ner: Wrote results to ner/ner_results.json

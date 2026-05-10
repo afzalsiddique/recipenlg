@@ -3,9 +3,7 @@
 #PBS -q gpus
 #PBS -l select=1:ncpus=8:mem=64gb:ngpus=1:glist=a100
 #PBS -l walltime=168:00:00
-#PBS -W group_list=x-ccast-prj-chayan
 #PBS -m abe
-#PBS -M m.afzalsiddique@ndus.edu
 #PBS -j oe
 #PBS -o logs/
 

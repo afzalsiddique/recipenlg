@@ -3,9 +3,7 @@
 #PBS -q preemptible
 #PBS -l select=1:ncpus=4:mem=16gb
 #PBS -l walltime=02:00:00
-#PBS -W group_list=x-ccast-prj-chayan
 #PBS -m abe
-#PBS -M m.afzalsiddique@ndus.edu
 
 # Bootstrap a project-local venv and install the project requirements.
 # Idempotent: safe to re-run; will reuse the existing venv if present and

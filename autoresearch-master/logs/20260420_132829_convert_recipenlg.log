@@ -1,0 +1,14 @@
+2026-04-20 13:28:30,659 INFO convert: Reading CSV from /mmfs1/projects/changhui.yan/m.afzalsiddique/datasets/RecipeNLG/full_dataset.csv
+2026-04-20 13:28:38,868 INFO convert:   Read 500000 rows...
+2026-04-20 13:28:47,738 INFO convert:   Read 1000000 rows...
+2026-04-20 13:28:59,762 INFO convert:   Read 1500000 rows...
+2026-04-20 13:29:11,707 INFO convert:   Read 2000000 rows...
+2026-04-20 13:29:17,206 INFO convert: Total recipes: 2231142
+2026-04-20 13:29:18,792 INFO convert: Writing 224 shards (10000 recipes per shard)
+2026-04-20 13:34:31,589 INFO convert:   Written shard 50/224
+2026-04-20 13:34:33,716 INFO convert:   Written shard 100/224
+2026-04-20 13:34:35,836 INFO convert:   Written shard 150/224
+2026-04-20 13:34:37,972 INFO convert:   Written shard 200/224
+2026-04-20 13:34:38,946 INFO convert:   Written shard 224/224
+2026-04-20 13:34:38,946 INFO convert: Conversion complete. 224 shards written to /mmfs1/home/m.afzalsiddique/.cache/autoresearch/data
+2026-04-20 13:34:38,946 INFO convert: MAX_SHARD = 223 (last shard = validation)

@@ -1,0 +1,26 @@
+2026-04-21 16:10:35,712 INFO evaluate: Loading 100 test recipes from validation shard
+2026-04-21 16:10:36,040 INFO evaluate: Loaded 100 valid test recipes
+2026-04-21 16:10:36,041 INFO evaluate: 
+============================================================
+2026-04-21 16:10:36,041 INFO evaluate: Evaluating: baseline (checkpoints/baseline.pt)
+2026-04-21 16:10:36,041 INFO evaluate: ============================================================
+2026-04-21 16:10:36,042 INFO evaluate: Loading model from checkpoints/baseline.pt
+2026-04-21 16:10:36,277 INFO evaluate: Model loaded: val_bpb=0.560673998997357, params=11.5M
+2026-04-21 16:11:18,099 INFO evaluate:   Generated 20/100 recipes
+2026-04-21 16:11:58,738 INFO evaluate:   Generated 40/100 recipes
+2026-04-21 16:12:39,355 INFO evaluate:   Generated 60/100 recipes
+2026-04-21 16:13:19,964 INFO evaluate:   Generated 80/100 recipes
+2026-04-21 16:14:00,563 INFO evaluate:   Generated 100/100 recipes
+2026-04-21 16:14:01,541 INFO evaluate: 
+============================================================
+2026-04-21 16:14:01,541 INFO evaluate: Evaluating: best (checkpoints/best.pt)
+2026-04-21 16:14:01,541 INFO evaluate: ============================================================
+2026-04-21 16:14:01,541 INFO evaluate: Loading model from checkpoints/best.pt
+2026-04-21 16:14:01,698 INFO evaluate: Model loaded: val_bpb=0.5665853432647479, params=11.5M
+2026-04-21 16:14:42,406 INFO evaluate:   Generated 20/100 recipes
+2026-04-21 16:15:23,113 INFO evaluate:   Generated 40/100 recipes
+2026-04-21 16:16:03,873 INFO evaluate:   Generated 60/100 recipes
+2026-04-21 16:16:44,680 INFO evaluate:   Generated 80/100 recipes
+2026-04-21 16:17:25,407 INFO evaluate:   Generated 100/100 recipes
+2026-04-21 16:17:28,524 INFO evaluate: 
+Detailed results saved to evaluation_results.txt

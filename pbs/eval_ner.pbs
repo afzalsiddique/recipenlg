@@ -3,9 +3,7 @@
 #PBS -q default
 #PBS -l select=1:ncpus=2:mem=4gb
 #PBS -l walltime=00:30:00
-#PBS -W group_list=x-ccast-prj-chayan
 #PBS -m abe
-#PBS -M m.afzalsiddique@ndus.edu
 #PBS -j oe
 #PBS -o logs/
 

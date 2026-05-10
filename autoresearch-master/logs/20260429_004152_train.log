@@ -1,0 +1,13 @@
+2026-04-29 00:41:53,556 INFO train: Vocab size: 8,192
+2026-04-29 00:41:53,557 INFO train: Model config: {'sequence_len': 2048, 'vocab_size': 8192, 'n_layer': 4, 'n_head': 2, 'n_kv_head': 2, 'n_embd': 256, 'window_pattern': 'L'}
+2026-04-29 00:41:53,766 INFO train: Parameter counts:
+2026-04-29 00:41:53,766 INFO train:   wte                     : 2,097,152
+2026-04-29 00:41:53,768 INFO train:   value_embeds            : 4,194,304
+2026-04-29 00:41:53,769 INFO train:   lm_head                 : 2,097,152
+2026-04-29 00:41:53,769 INFO train:   transformer_matrices    : 3,145,856
+2026-04-29 00:41:53,769 INFO train:   scalars                 : 8
+2026-04-29 00:41:53,769 INFO train:   total                   : 11,534,472
+2026-04-29 00:41:53,769 INFO train: Estimated FLOPs per token: 5.662387e+07
+2026-04-29 00:41:53,769 INFO train: Scaling AdamW LRs by 1/sqrt(256/768) = 1.732051
+2026-04-29 00:41:55,081 INFO train: Time budget: 300s
+2026-04-29 00:41:55,081 INFO train: Gradient accumulation steps: 1

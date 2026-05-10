@@ -1,0 +1,9 @@
+2026-04-20 13:28:28,803 INFO prepare: Cache directory: /mmfs1/home/m.afzalsiddique/.cache/autoresearch
+2026-04-20 13:28:30,658 INFO prepare: Data: converting RecipeNLG CSV to parquet shards...
+2026-04-20 13:34:39,896 INFO prepare: Data: 224 shards ready at /mmfs1/home/m.afzalsiddique/.cache/autoresearch/data
+2026-04-20 13:34:39,924 INFO prepare: Tokenizer: training BPE tokenizer...
+2026-04-20 13:35:30,353 INFO prepare: Tokenizer: trained in 50.4s, saved to /mmfs1/home/m.afzalsiddique/.cache/autoresearch/tokenizer/tokenizer.pkl
+2026-04-20 13:35:30,353 INFO prepare: Tokenizer: building token_bytes lookup...
+2026-04-20 13:35:34,936 INFO prepare: Tokenizer: saved token_bytes to /mmfs1/home/m.afzalsiddique/.cache/autoresearch/tokenizer/token_bytes.pt
+2026-04-20 13:35:34,936 INFO prepare: Tokenizer: sanity check passed (vocab_size=8192)
+2026-04-20 13:35:34,956 INFO prepare: Done! Ready to train.

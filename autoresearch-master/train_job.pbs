@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -N recipenlg_train
+#PBS -q gpus
+#PBS -l select=1:ncpus=8:mem=20gb:ngpus=1:glist=a10
+#PBS -l walltime=00:30:00
+#PBS -m abe
+
+cd /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/autoresearch-master
+
+export PATH="/mmfs1/home/m.afzalsiddique/.local/bin:$PATH"
+
+uv run train.py > run.log 2>&1

@@ -1,0 +1,891 @@
+Project dir: /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+Python: /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/bin/python
+Python 3.13.5
+Wed Apr 29 08:20:45 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:27:00.0 Off |                 ERR! |
+|ERR!  ERR!    P0             90W / ERR!  |       1MiB /  46068MiB |    100%      Default |
+|                                         |                        |                 ERR! |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A40                     On  |   00000000:A3:00.0 Off |                    0 |
+|  0%   33C    P8             21W /  300W |       1MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+2026-04-29 08:21:39,568 [INFO] run_generation: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260429-082137_run_generation.log
+2026-04-29 08:21:39,568 [INFO] run_generation: PID=1499614 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-04-29 08:21:39,568 [INFO] run_generation: Args: {
+  "model_name_or_path": "generation/model_out",
+  "input_jsonl": "generation/data/gold_test_100.json",
+  "output_json": "generation/data/generated_recipenlg.json",
+  "interactive": "False",
+  "top_p": "0.9",
+  "top_k": "0",
+  "temperature": "1.0",
+  "num_return_sequences": "10",
+  "max_new_tokens": "950",
+  "do_sample": "True",
+  "seed": "42",
+  "no_cuda": "False"
+}
+2026-04-29 08:21:39,794 [INFO] run_generation: Device=cuda
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights:  60%|██████    | 89/148 [00:00<00:00, 784.53it/s]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 901.89it/s]
+2026-04-29 08:21:51,659 [INFO] run_generation: Decoding kwargs: {'do_sample': True, 'top_p': 0.9, 'top_k': 0, 'temperature': 1.0, 'max_new_tokens': 950, 'num_return_sequences': 10, 'eos_token_id': 50266, 'pad_token_id': 50266}
+2026-04-29 08:21:51,682 [INFO] run_generation: Loaded 100 gold prompts from generation/data/gold_test_100.json
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer GPT2Tokenizer. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+2026-04-29 08:23:06,301 [INFO] run_generation: Generated 10/100 gold prompts (100 total recipes)
+2026-04-29 08:24:18,898 [INFO] run_generation: Generated 20/100 gold prompts (200 total recipes)
+2026-04-29 08:25:31,498 [INFO] run_generation: Generated 30/100 gold prompts (300 total recipes)
+2026-04-29 08:26:44,396 [INFO] run_generation: Generated 40/100 gold prompts (400 total recipes)
+[transformers] This is a friendly reminder - the current text generation call has exceeded the model's predefined maximum length (1024). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [64,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [65,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [66,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [67,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [68,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [69,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [70,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [71,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [72,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [73,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [74,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [75,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [76,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [77,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [78,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [79,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [80,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [81,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [82,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [83,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [84,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [85,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [86,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [87,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [88,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [89,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [90,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [91,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [92,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [93,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [94,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [95,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [2,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [64,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [65,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [66,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [67,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [68,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [69,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [70,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [71,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [72,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [73,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [74,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [75,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [76,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [77,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [78,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [79,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [80,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [81,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [82,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [83,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [84,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [85,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [86,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [87,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [88,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [89,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [90,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [91,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [92,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [93,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [94,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [4,0,0], thread: [95,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [64,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [65,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [66,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [67,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [68,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [69,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [70,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [71,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [72,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [73,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [74,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [75,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [76,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [77,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [78,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [79,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [80,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [81,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [82,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [83,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [84,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [85,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [86,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [87,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [88,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [89,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [90,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [91,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [92,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [93,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [94,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [3,0,0], thread: [95,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [64,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [65,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [66,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [67,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [68,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [69,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [70,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [71,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [72,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [73,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [74,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [75,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [76,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [77,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [78,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [79,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [80,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [81,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [82,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [83,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [84,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [85,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [86,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [87,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [88,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [89,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [90,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [91,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [92,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [93,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [94,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [5,0,0], thread: [95,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [64,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [65,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [66,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [67,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [68,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [69,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [70,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [71,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [72,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [73,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [74,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [75,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [76,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [77,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [78,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [79,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [80,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [81,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [82,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [83,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [84,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [85,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [86,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [87,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [88,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [89,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [90,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [91,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [92,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [93,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [94,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [95,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [1,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [32,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [33,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [34,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [35,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [36,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [37,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [38,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [39,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [40,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [41,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [42,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [43,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [44,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [45,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [46,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [47,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [48,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [49,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [50,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [51,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [52,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [53,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [54,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [55,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [56,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [57,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [58,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [59,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [60,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [61,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [62,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [63,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [64,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [65,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [66,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [67,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [68,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [69,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [70,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [71,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [72,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [73,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [74,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [75,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [76,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [77,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [78,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [79,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [80,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [81,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [82,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [83,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [84,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [85,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [86,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [87,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [88,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [89,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [90,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [91,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [92,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [93,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [94,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [95,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [96,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [97,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [98,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [99,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [100,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [101,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [102,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [103,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [104,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [105,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [106,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [107,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [108,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [109,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [110,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [111,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [112,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [113,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [114,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [115,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [116,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [117,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [118,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [119,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [120,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [121,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [122,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [123,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [124,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [125,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [126,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [127,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [0,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [1,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [2,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [3,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [4,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [5,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [6,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [7,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [8,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [9,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [10,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [11,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [12,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [13,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [14,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [15,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [16,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [17,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [18,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [19,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [20,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [21,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [22,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [23,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [24,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [25,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [26,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [27,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [28,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [29,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [30,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+../aten/src/ATen/native/cuda/Indexing.cu:1255: indexSelectSmallIndex: block: [0,0,0], thread: [31,0,0] Assertion `srcIndex < srcSelectDimSize` failed.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/generation/run_generation.py", line 160, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/generation/run_generation.py", line 142, in main
+    out = model.generate(ids, **gen_kwargs)
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/generation/utils.py", line 2539, in generate
+    result = decoding_method(
+        self,
+    ...<5 lines>...
+        **model_kwargs,
+    )
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/generation/utils.py", line 2746, in _sample
+    outputs = model_forward(**model_inputs, return_dict=True)
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/utils/generic.py", line 900, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 691, in forward
+    transformer_outputs: BaseModelOutputWithPastAndCrossAttentions = self.transformer(
+                                                                     ~~~~~~~~~~~~~~~~^
+        input_ids,
+        ^^^^^^^^^^
+    ...<8 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/utils/generic.py", line 976, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/utils/output_capturing.py", line 248, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/models/gpt2/modeling_gpt2.py", line 591, in forward
+    causal_mask = create_causal_mask(
+        config=self.config,
+    ...<3 lines>...
+        position_ids=position_ids,
+    )
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/utils/deprecation.py", line 171, in wrapped_func
+    return func(*args, **kwargs)
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/masking_utils.py", line 983, in create_causal_mask
+    causal_mask = mask_interface(
+        batch_size=batch_size,
+    ...<10 lines>...
+        device=device,
+    )
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/masking_utils.py", line 500, in sdpa_mask
+    if allow_is_causal_skip and _ignore_causal_mask_sdpa(padding_mask, q_length, kv_length, kv_offset, local_size):
+                                ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/lib/python3.13/site-packages/transformers/masking_utils.py", line 270, in _ignore_causal_mask_sdpa
+    and (padding_mask is None or padding_mask.all())
+                                 ~~~~~~~~~~~~~~~~^^
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+

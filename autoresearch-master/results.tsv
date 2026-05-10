@@ -1,0 +1,56 @@
+commit	val_bpb	memory_gb	status	description
+8dbda1b	0.585260	7.1	keep	baseline: depth=4, 11.5M params, batch=131K, ReluSquared MLP
+13b9920	0.586065	22.1	discard	depth 4->8 (50.3M params) - worse due to fewer steps in time budget
+fbc3524	0.589354	14.0	discard	double batch 131K->262K tokens/step - worse optimization
+97530ce	0.589115	3.6	discard	halve batch 131K->65K tokens/step - noisier gradients hurt
+17bd527	0.588448	7.1	discard	double Muon LR 0.04->0.08 - overshoots
+839c6d9	0.585985	7.1	discard	warmdown 0.5->0.3 - slightly worse, less decay time hurts
+22de9e0	0.585209	7.1	keep	all-long window pattern (SSSL->L) - first improvement!
+9c8ee94	0.585091	7.1	keep	warmdown 0.5->0.7 - more gradual decay helps
+fe62238	0.587096	7.1	discard	add 5% warmup - wastes training time
+7f55c20	0.585572	7.1	discard	halve Muon LR 0.04->0.02 - underlearns
+7acfc52	0.584447	9.6	keep	widen ASPECT_RATIO 64->96 (model_dim 256->384, 19.7M params) - more capacity per step wins
+9e92864	0.582248	12.2	keep	widen ASPECT_RATIO 96->128 (model_dim 384->512, 29.4M params) - bigger win
+9a1004e	0.598932	17.4	discard	widen ASPECT_RATIO 128->192 (model_dim 768, 53.5M) - too few steps (463) hurts
+aa48673	0.544643	14.8	keep	ASPECT_RATIO 128->160 (model_dim 640, 5 heads, 40.6M) - large win, 1592 steps
+2fc219e	0.543435	17.4	keep	ASPECT_RATIO 160->192 (model_dim 768, 6 heads, 53.5M) - marginal win on faster hw
+b10fc20	0.593713	7.1	discard	Adam beta1 0.8 -> 0.9 (clean test at ASPECT_RATIO=64)
+f34a770	0.593670	7.1	discard	Adam beta2 0.95 -> 0.99
+7f7d66f	0.594235	7.1	discard	WEIGHT_DECAY 0.2 -> 0.1
+86e5465	0.585906	8.1	discard	MLP expansion 4x -> 6x
+ebffa75	0.593568	7.1	discard	Muon momentum 0.95 -> 0.99
+f7dc42e	0.593679	7.1	discard	MATRIX_LR 0.04 -> 0.05
+a96b753	0.594495	7.1	discard	EMBEDDING_LR 0.6 -> 0.4
+bf59869	0.594460	7.1	keep	A10 baseline on apr30: ASPECT_RATIO=64, WARMDOWN=0.7, WINDOW=L, UNEMBEDDING_LR=0.004 (new reference)
+970e5e8	1.001207	11.1	discard	label smoothing 0.1 (regression vs baseline 0.594; also slowed steps 1722->1007)
+5428935	0.612361	7.1	discard	ADAM_EPS 1e-10 -> 1e-8 (regression vs baseline 0.594; steps 1722->1017)
+0c4de1d	0.612359	7.1	discard	ADAM_BETAS (0.8,0.95)->(0.9,0.95) regression vs baseline 0.594
+7b003fb	0.613711	7.1	discard	SOFTCAP 15->30 regression vs baseline 0.594 (steps 1722->1019)
+a6c629c	0.612799	7.1	discard	GRADIENT_CLIP_NORM None->1.0 regression vs baseline 0.594 (steps 1722->1015)
+6a82f4a	0.614026	7.1	discard	WEIGHT_DECAY 0.2->0.05 regression vs baseline 0.594 (steps 1722->1025; node slower)
+dae3c88	0.612558	7.1	discard	WEIGHT_DECAY 0.2->0.4 regression vs baseline 0.594 (steps 1722->1039)
+de4ebcd	0.613245	7.1	discard	WARMDOWN_RATIO 0.7->0.85 regression vs baseline 0.594 (steps 1722->1032)
+bf59869	0.612592	7.1	keep	BASELINE RERUN: same commit, slower node (1041 steps vs 1722). New effective baseline 0.6126
+c979673	0.613379	7.1	discard	Muon ns_steps 5->3 (vs node baseline 0.6126; no speedup, slightly worse)
+630bffd	0.612160	7.1	keep	Muon momentum warmup 300->100 steps (-0.000432 vs 0.6126; small improvement)
+b672e6e	0.617058	6.6	discard	MLP 4x->3x regression vs 0.6122 (capacity loss outweighs step gain)
+9bfe08d	0.612435	7.1	discard	EMBEDDING_LR 0.6->0.8 marginal regression vs 0.6122
+a046891	0.608676	7.1	keep	UNEMBEDDING_LR 0.004->0.008 (-0.0035 vs 0.6122; meaningful improvement)
+3c396bd	0.611005	7.1	discard	UNEMBEDDING_LR 0.008->0.016 too aggressive (vs 0.6087); 0.008 is sweet spot
+c75ce4c	0.609186	7.1	discard	MATRIX_LR 0.04->0.06 marginal regression vs 0.6087
+4d86ac7	0.609754	7.1	discard	SCALAR_LR 0.5->0.3 regression vs 0.6087
+2438d63	0.609684	7.1	discard	x0_lambdas init 0.1->0.0 regression vs 0.6087
+3b84029	0.610436	7.1	discard	rotary base 10000->1000 regression vs 0.6087
+5ef8416	0.609141	7.1	discard	WARMDOWN_RATIO 0.7->0.6 marginal regression vs 0.6087
+53700c9	0.611431	7.1	discard	GRADIENT_CLIP_NORM None->0.5 regression vs 0.6087
+823f314	0.609974	7.1	discard	WEIGHT_DECAY 0.2->0.1 regression vs 0.6087
+e557a8c	0.609109	7.1	discard	SCALAR_LR 0.5->0.7 marginal regression vs 0.6087
+a046891	0.609110	7.1	keep	BASELINE RERUN at HEAD a046891 (1036 steps); on-node noise ~+/-0.0005; new effective baseline 0.6091
+40ed414	0.609400	7.1	discard	ADAM_BETAS beta2 0.95->0.98 within noise of 0.6091 baseline
+b20ca6e	0.614522	7.3	discard	residual dropout 0.05 regression vs 0.6091 (undertrained regime hurt by dropout)
+9d2c1f1	0.609886	7.1	discard	SOFTCAP 15->10 within noise of 0.6091 baseline
+1c3b3db	0.610241	7.1	discard	rotary base 10000->50000 within noise of 0.6091 baseline
+5894e6f	0.609903	7.1	discard	EMBEDDING_LR 0.6->0.5 within noise of 0.6091 baseline
+201c36a	0.609639	7.1	discard	WINDOW_PATTERN L->S within noise; no step gain (attn not bottleneck)
+0d76eac	0.611173	7.1	discard	MATRIX_LR 0.04->0.03 small regression vs 0.6091 baseline
+d08cdbe	0.609130	7.1	discard	paired LR scale x1.25 (EMB/UNEMB/MATRIX) within noise of 0.6091

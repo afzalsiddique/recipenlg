@@ -3,9 +3,7 @@
 #PBS -q preemptible
 #PBS -l select=1:ncpus=4:mem=32gb:ngpus=1:glist=l40s
 #PBS -l walltime=06:00:00
-#PBS -W group_list=x-ccast-prj-chayan
 #PBS -m abe
-#PBS -M m.afzalsiddique@ndus.edu
 
 cd "$PBS_O_WORKDIR"
 source pbs/env.sh

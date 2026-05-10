@@ -1,0 +1,31 @@
+Project dir: /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+Python: /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/bin/python
+Python 3.13.5
+2026-04-29 02:10:27,844 [INFO] prepare_text: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260429-021025_prepare_text.log
+2026-04-29 02:10:27,844 [INFO] prepare_text: PID=87480 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-04-29 02:10:27,844 [INFO] prepare_text: Args: {'input_csv': PosixPath('/mmfs1/projects/changhui.yan/m.afzalsiddique/datasets/RecipeNLG/full_dataset.csv'), 'output_dir': PosixPath('generation/data'), 'train_filename': 'unsupervised_train.txt', 'test_filename': 'unsupervised_test.txt', 'gold_filename': 'gold_test_100.json', 'max_rows': -1, 'test_size': 0.05, 'n_gold': 100, 'min_title_len': 4, 'min_directions_count': 2, 'min_directions_chars': 30, 'min_ingredients_chars': 2, 'seed': 42}
+2026-04-29 02:10:28,341 [INFO] prepare_text: Reading /mmfs1/projects/changhui.yan/m.afzalsiddique/datasets/RecipeNLG/full_dataset.csv
+2026-04-29 02:10:55,631 [INFO] prepare_text: Loaded raw rows: 2231142, cols: ['Unnamed: 0', 'title', 'ingredients', 'directions', 'link', 'source', 'NER']
+2026-04-29 02:12:13,952 [INFO] prepare_text: Kept 1941919 / 2231142 rows after filtering
+2026-04-29 02:12:16,164 [INFO] prepare_text: Split: train=1844823 test=97096
+2026-04-29 02:12:16,164 [INFO] prepare_text: Writing 1844823 recipes to generation/data/unsupervised_train.txt
+2026-04-29 02:12:25,848 [INFO] prepare_text:   ... wrote 100000
+2026-04-29 02:12:30,995 [INFO] prepare_text:   ... wrote 200000
+2026-04-29 02:12:35,607 [INFO] prepare_text:   ... wrote 300000
+2026-04-29 02:12:40,316 [INFO] prepare_text:   ... wrote 400000
+2026-04-29 02:12:44,855 [INFO] prepare_text:   ... wrote 500000
+2026-04-29 02:12:49,977 [INFO] prepare_text:   ... wrote 600000
+2026-04-29 02:12:54,842 [INFO] prepare_text:   ... wrote 700000
+2026-04-29 02:12:59,576 [INFO] prepare_text:   ... wrote 800000
+2026-04-29 02:13:04,160 [INFO] prepare_text:   ... wrote 900000
+2026-04-29 02:13:09,169 [INFO] prepare_text:   ... wrote 1000000
+2026-04-29 02:13:13,709 [INFO] prepare_text:   ... wrote 1100000
+2026-04-29 02:13:18,407 [INFO] prepare_text:   ... wrote 1200000
+2026-04-29 02:13:23,123 [INFO] prepare_text:   ... wrote 1300000
+2026-04-29 02:13:27,716 [INFO] prepare_text:   ... wrote 1400000
+2026-04-29 02:13:32,498 [INFO] prepare_text:   ... wrote 1500000
+2026-04-29 02:13:37,706 [INFO] prepare_text:   ... wrote 1600000
+2026-04-29 02:13:42,304 [INFO] prepare_text:   ... wrote 1700000
+2026-04-29 02:13:47,068 [INFO] prepare_text:   ... wrote 1800000
+2026-04-29 02:13:49,918 [INFO] prepare_text: Writing 97096 recipes to generation/data/unsupervised_test.txt
+2026-04-29 02:13:57,131 [INFO] prepare_text: Wrote 100 gold recipes to generation/data/gold_test_100.json

@@ -1,0 +1,51 @@
+2026-04-22 18:23:08,053 INFO: Loading 100 test recipes from validation shard
+2026-04-22 18:23:11,431 INFO: Loaded 100 valid test recipes
+2026-04-22 18:23:11,431 INFO: 
+============================================================
+2026-04-22 18:23:11,431 INFO: Evaluating: best (checkpoints/best.pt)
+2026-04-22 18:23:11,431 INFO: ============================================================
+2026-04-22 18:23:11,433 INFO: Loading model from checkpoints/best.pt
+2026-04-22 18:23:11,790 INFO: Model loaded: val_bpb=0.5665853432647479, params=11.5M
+2026-04-22 18:23:54,852 INFO:   Generated 20/100 recipes
+2026-04-22 18:24:36,257 INFO:   Generated 40/100 recipes
+2026-04-22 18:25:17,712 INFO:   Generated 60/100 recipes
+2026-04-22 18:25:59,190 INFO:   Generated 80/100 recipes
+2026-04-22 18:26:40,597 INFO:   Generated 100/100 recipes
+2026-04-22 18:26:41,566 INFO: 
+============================================================
+2026-04-22 18:26:41,566 INFO: Evaluating: best_50m (checkpoints/best_50m.pt)
+2026-04-22 18:26:41,566 INFO: ============================================================
+2026-04-22 18:26:41,566 INFO: Loading model from checkpoints/best_50m.pt
+2026-04-22 18:26:42,112 INFO: Model loaded: val_bpb=0.49981203172506483, params=50.3M
+2026-04-22 18:27:58,385 INFO:   Generated 20/100 recipes
+2026-04-22 18:29:14,560 INFO:   Generated 40/100 recipes
+2026-04-22 18:30:30,773 INFO:   Generated 60/100 recipes
+2026-04-22 18:31:47,031 INFO:   Generated 80/100 recipes
+2026-04-22 18:33:03,236 INFO:   Generated 100/100 recipes
+2026-04-22 18:33:04,179 INFO: 
+============================================================
+2026-04-22 18:33:04,179 INFO: Evaluating: best_130m (checkpoints/best_130m.pt)
+2026-04-22 18:33:04,179 INFO: ============================================================
+2026-04-22 18:33:04,179 INFO: Loading model from checkpoints/best_130m.pt
+2026-04-22 18:34:45,509 INFO: Model loaded: val_bpb=0.48756219426119907, params=135.3M
+2026-04-22 18:36:35,476 INFO:   Generated 20/100 recipes
+2026-04-22 18:38:25,401 INFO:   Generated 40/100 recipes
+2026-04-22 18:40:15,345 INFO:   Generated 60/100 recipes
+2026-04-22 18:42:05,295 INFO:   Generated 80/100 recipes
+2026-04-22 18:43:55,104 INFO:   Generated 100/100 recipes
+2026-04-22 18:43:56,084 INFO: 
+Detailed results saved to evaluation_results.txt
+
+======================================================================
+RESULTS COMPARISON
+======================================================================
+Model              val_bpb       BLEU       GLEU        WER
+----------------------------------------------------------------------
+best              0.566585     0.0116     0.0261     4.2617
+best_50m          0.499812     0.0055     0.0162     4.3180
+best_130m         0.487562     0.0097     0.0272     4.1453
+Paper (GPT-2)          N/A     0.8660     0.6620     0.7510
+======================================================================
+
+Note: Paper uses GPT-2 (117M params, fine-tuned from pretrained).
+Our models are 11.5M params, trained from scratch.

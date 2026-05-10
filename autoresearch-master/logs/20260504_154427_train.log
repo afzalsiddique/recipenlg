@@ -1,0 +1,44 @@
+2026-05-04 15:44:29,422 INFO train: Vocab size: 8,192
+2026-05-04 15:44:29,423 INFO train: Model config: {'sequence_len': 2048, 'vocab_size': 8192, 'n_layer': 4, 'n_head': 2, 'n_kv_head': 2, 'n_embd': 256, 'window_pattern': 'S'}
+2026-05-04 15:44:29,689 INFO train: Parameter counts:
+2026-05-04 15:44:29,689 INFO train:   wte                     : 2,097,152
+2026-05-04 15:44:29,691 INFO train:   value_embeds            : 4,194,304
+2026-05-04 15:44:29,692 INFO train:   lm_head                 : 2,097,152
+2026-05-04 15:44:29,692 INFO train:   transformer_matrices    : 3,145,856
+2026-05-04 15:44:29,692 INFO train:   scalars                 : 8
+2026-05-04 15:44:29,692 INFO train:   total                   : 11,534,472
+2026-05-04 15:44:29,692 INFO train: Estimated FLOPs per token: 4.718669e+07
+2026-05-04 15:44:29,693 INFO train: Scaling AdamW LRs by 1/sqrt(256/768) = 1.732051
+2026-05-04 15:44:31,334 INFO train: Time budget: 300s
+2026-05-04 15:44:31,334 INFO train: Gradient accumulation steps: 1
+2026-05-04 15:45:02,102 INFO train: step 00000 (0.0%) | loss: 9.010333 | lrm: 1.00 | mfu: 0.0% | epoch: 1 | remaining: 300s
+2026-05-04 15:45:16,866 INFO train: step 00050 (3.7%) | loss: 2.719742 | lrm: 1.00 | mfu: 2.0% | epoch: 1 | remaining: 289s
+2026-05-04 15:45:31,391 INFO train: step 00100 (8.5%) | loss: 2.220105 | lrm: 1.00 | mfu: 2.0% | epoch: 1 | remaining: 274s
+2026-05-04 15:45:45,956 INFO train: step 00150 (13.4%) | loss: 2.061057 | lrm: 1.00 | mfu: 2.3% | epoch: 1 | remaining: 260s
+2026-05-04 15:46:00,468 INFO train: step 00200 (18.2%) | loss: 1.983250 | lrm: 1.00 | mfu: 2.2% | epoch: 1 | remaining: 245s
+2026-05-04 15:46:14,938 INFO train: step 00250 (23.1%) | loss: 1.925008 | lrm: 1.00 | mfu: 2.1% | epoch: 1 | remaining: 231s
+2026-05-04 15:46:29,460 INFO train: step 00300 (27.9%) | loss: 1.891215 | lrm: 1.00 | mfu: 2.3% | epoch: 1 | remaining: 216s
+2026-05-04 15:46:44,094 INFO train: step 00350 (32.8%) | loss: 1.863939 | lrm: 0.96 | mfu: 2.1% | epoch: 1 | remaining: 201s
+2026-05-04 15:46:58,682 INFO train: step 00400 (37.6%) | loss: 1.824579 | lrm: 0.89 | mfu: 2.0% | epoch: 1 | remaining: 187s
+2026-05-04 15:47:13,195 INFO train: step 00450 (42.5%) | loss: 1.802843 | lrm: 0.82 | mfu: 2.0% | epoch: 1 | remaining: 172s
+2026-05-04 15:47:28,165 INFO train: step 00500 (47.4%) | loss: 1.777361 | lrm: 0.75 | mfu: 2.0% | epoch: 1 | remaining: 157s
+2026-05-04 15:47:42,611 INFO train: step 00550 (52.3%) | loss: 1.773598 | lrm: 0.68 | mfu: 2.1% | epoch: 1 | remaining: 143s
+2026-05-04 15:47:57,293 INFO train: step 00600 (57.2%) | loss: 1.737915 | lrm: 0.61 | mfu: 2.3% | epoch: 1 | remaining: 128s
+2026-05-04 15:48:11,914 INFO train: step 00650 (62.0%) | loss: 1.722013 | lrm: 0.54 | mfu: 2.0% | epoch: 1 | remaining: 114s
+2026-05-04 15:48:26,536 INFO train: step 00700 (66.9%) | loss: 1.703607 | lrm: 0.47 | mfu: 2.1% | epoch: 1 | remaining: 99s
+2026-05-04 15:48:40,980 INFO train: step 00750 (71.7%) | loss: 1.690164 | lrm: 0.40 | mfu: 2.3% | epoch: 1 | remaining: 85s
+2026-05-04 15:48:55,612 INFO train: step 00800 (76.6%) | loss: 1.685532 | lrm: 0.33 | mfu: 1.8% | epoch: 1 | remaining: 70s
+2026-05-04 15:49:10,100 INFO train: step 00850 (81.4%) | loss: 1.662796 | lrm: 0.27 | mfu: 2.3% | epoch: 1 | remaining: 55s
+2026-05-04 15:49:24,896 INFO train: step 00900 (86.3%) | loss: 1.651075 | lrm: 0.20 | mfu: 2.2% | epoch: 1 | remaining: 41s
+2026-05-04 15:49:39,364 INFO train: step 00950 (91.2%) | loss: 1.636495 | lrm: 0.13 | mfu: 2.1% | epoch: 1 | remaining: 26s
+2026-05-04 15:49:54,189 INFO train: step 01000 (96.1%) | loss: 1.621401 | lrm: 0.06 | mfu: 2.1% | epoch: 1 | remaining: 11s
+2026-05-04 15:50:16,473 INFO train: --- Final Results ---
+2026-05-04 15:50:16,474 INFO train: val_bpb:          0.609639
+2026-05-04 15:50:16,474 INFO train: training_seconds: 300.2
+2026-05-04 15:50:16,474 INFO train: total_seconds:    347.1
+2026-05-04 15:50:16,474 INFO train: peak_vram_mb:     7243.3
+2026-05-04 15:50:16,474 INFO train: mfu_percent:      2.15
+2026-05-04 15:50:16,474 INFO train: total_tokens_M:   136.6
+2026-05-04 15:50:16,474 INFO train: num_steps:        1042
+2026-05-04 15:50:16,474 INFO train: num_params_M:     11.5
+2026-05-04 15:50:16,474 INFO train: depth:            4

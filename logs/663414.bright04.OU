@@ -1,0 +1,27 @@
+Project dir: /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+Python: /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/.venv/bin/python
+Python 3.13.5
+openjdk version "11.0.21" 2023-10-17 LTS
+OpenJDK Runtime Environment (Red_Hat-11.0.21.0.9-1) (build 11.0.21+9-LTS)
+OpenJDK 64-Bit Server VM (Red_Hat-11.0.21.0.9-1) (build 11.0.21+9-LTS, mixed mode, sharing)
+2026-04-30 01:16:22,404 [INFO] replicate_metrics: Logging to /mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg/logs/20260430-011622_replicate_metrics.log
+2026-04-30 01:16:22,404 [INFO] replicate_metrics: PID=1982318 cwd=/mmfs1/projects/changhui.yan/m.afzalsiddique/codes/recipe-nlg-github-replicate/recipenlg
+2026-04-30 01:16:22,404 [INFO] replicate_metrics: Args: {'gold_json': PosixPath('generation/data/gold_test_100.json'), 'generated_json': PosixPath('generation/data/generated_recipenlg.json'), 'output_json': PosixPath('eval/results.json'), 'num_return_sequences': 10, 'language_check_rule_skip': 'WHITESPACE_RULE', 'language_tool_lang': 'en-US', 'skip_language_check': False}
+2026-04-30 01:16:22,643 [INFO] replicate_metrics: Loaded gold=100 generated=1000 K=10
+cosine:   0%|          | 0/100 [00:00<?, ?it/s]cosine:   9%|▉         | 9/100 [00:00<00:01, 89.93it/s]cosine:  20%|██        | 20/100 [00:00<00:00, 96.67it/s]cosine:  31%|███       | 31/100 [00:00<00:00, 98.44it/s]cosine:  42%|████▏     | 42/100 [00:00<00:00, 99.77it/s]cosine:  52%|█████▏    | 52/100 [00:00<00:00, 95.48it/s]cosine:  62%|██████▏   | 62/100 [00:00<00:00, 96.23it/s]cosine:  73%|███████▎  | 73/100 [00:00<00:00, 97.17it/s]cosine:  83%|████████▎ | 83/100 [00:00<00:00, 96.30it/s]cosine:  93%|█████████▎| 93/100 [00:00<00:00, 96.50it/s]cosine: 100%|██████████| 100/100 [00:01<00:00, 97.10it/s]
+2026-04-30 01:16:23,675 [INFO] replicate_metrics: Cosine similarity (mean of max-of-K): 0.7577  (paper: 0.666)
+2026-04-30 01:16:23,749 [ERROR] replicate_metrics: LanguageCheck failed: Detected java 11.0. LanguageTool requires Java >= 17 for version latest.
+bleu:   0%|          | 0/100 [00:00<?, ?it/s]bleu:   5%|▌         | 5/100 [00:00<00:02, 45.82it/s]bleu:  13%|█▎        | 13/100 [00:00<00:01, 63.42it/s]bleu:  21%|██        | 21/100 [00:00<00:01, 69.35it/s]bleu:  28%|██▊       | 28/100 [00:00<00:01, 69.03it/s]bleu:  35%|███▌      | 35/100 [00:00<00:00, 68.72it/s]bleu:  43%|████▎     | 43/100 [00:00<00:00, 62.85it/s]bleu:  50%|█████     | 50/100 [00:00<00:00, 57.18it/s]bleu:  57%|█████▋    | 57/100 [00:00<00:00, 59.15it/s]bleu:  65%|██████▌   | 65/100 [00:01<00:00, 62.98it/s]bleu:  73%|███████▎  | 73/100 [00:01<00:00, 63.04it/s]bleu:  80%|████████  | 80/100 [00:01<00:00, 60.56it/s]bleu:  87%|████████▋ | 87/100 [00:01<00:00, 62.32it/s]bleu:  94%|█████████▍| 94/100 [00:01<00:00, 59.95it/s]bleu: 100%|██████████| 100/100 [00:01<00:00, 62.35it/s]
+2026-04-30 01:16:25,353 [INFO] replicate_metrics: BLEU (sentence, smoothing4): 0.8787  (paper: 0.866)
+gleu:   0%|          | 0/100 [00:00<?, ?it/s]gleu:   5%|▌         | 5/100 [00:00<00:01, 48.42it/s]gleu:  13%|█▎        | 13/100 [00:00<00:01, 64.53it/s]gleu:  21%|██        | 21/100 [00:00<00:01, 69.51it/s]gleu:  28%|██▊       | 28/100 [00:00<00:01, 68.42it/s]gleu:  35%|███▌      | 35/100 [00:00<00:00, 67.50it/s]gleu:  43%|████▎     | 43/100 [00:00<00:00, 62.81it/s]gleu:  50%|█████     | 50/100 [00:00<00:00, 57.09it/s]gleu:  57%|█████▋    | 57/100 [00:00<00:00, 58.68it/s]gleu:  65%|██████▌   | 65/100 [00:01<00:00, 62.11it/s]gleu:  73%|███████▎  | 73/100 [00:01<00:00, 62.09it/s]gleu:  80%|████████  | 80/100 [00:01<00:00, 59.21it/s]gleu:  87%|████████▋ | 87/100 [00:01<00:00, 61.40it/s]gleu:  94%|█████████▍| 94/100 [00:01<00:00, 59.16it/s]gleu: 100%|██████████| 100/100 [00:01<00:00, 61.70it/s]
+2026-04-30 01:16:26,975 [INFO] replicate_metrics: GLEU: 0.7485  (paper: 0.662)
+wer:   0%|          | 0/100 [00:00<?, ?it/s]wer:  49%|████▉     | 49/100 [00:00<00:00, 484.22it/s]wer: 100%|██████████| 100/100 [00:00<00:00, 496.17it/s]wer: 100%|██████████| 100/100 [00:00<00:00, 493.78it/s]
+2026-04-30 01:16:27,178 [INFO] replicate_metrics: WER (mean of min-of-K): 0.5880  (paper: 0.751)
+2026-04-30 01:16:27,181 [INFO] replicate_metrics: Wrote results to eval/results.json
+2026-04-30 01:16:27,182 [INFO] replicate_metrics: RESULTS: {
+  "cosine_similarity_mean": 0.7576648152312443,
+  "language_check_error": "Detected java 11.0. LanguageTool requires Java >= 17 for version latest.",
+  "bleu_mean": 0.8787372858411725,
+  "gleu_mean": 0.7485320516508054,
+  "wer_mean": 0.5879888393708748
+}

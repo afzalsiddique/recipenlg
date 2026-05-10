@@ -27,7 +27,7 @@ from utils.logging_setup import setup_logging  # noqa: E402
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_INPUT_CSV = Path("/mmfs1/projects/changhui.yan/m.afzalsiddique/datasets/RecipeNLG/full_dataset.csv")
+DEFAULT_INPUT_CSV = Path("/mmfs1/projects/PATH_TO_YOUR_DATASET/datasets/RecipeNLG/full_dataset.csv")
 DEFAULT_OUT_DIR = PROJECT_ROOT / "generation" / "data"
 
 STEP_REGEX = re.compile(r"(step|mix all)", re.IGNORECASE)
